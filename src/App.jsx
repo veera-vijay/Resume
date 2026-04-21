@@ -167,7 +167,7 @@ export function App() {
 
   // Familiar With Skills
   const familiarSkills = [
-    { name: "Next.js", icon: <img width="48" height="48" className="brightness-0 invert " src="https://img.icons8.com/hatch/64/triangle.png" alt="triangle"/> },
+    { name: "Next.js", icon: <img width="48" height="48"  src="https://img.icons8.com/hatch/64/triangle.png" alt="triangle"/> },
    
     {
       name: "Tailwind CSS",
@@ -212,7 +212,7 @@ export function App() {
           height="48"
           src="https://img.icons8.com/sf-regular/48/github.png"
           alt="github"
-          className="brightness-0 invert"
+         
         />
       )
      
@@ -226,7 +226,8 @@ export function App() {
 
   return (
     <div className="bg-white dark:bg-gray-900   overflow-x-hidden text-gray-800 dark:text-gray-100 transition-colors duration-300 ">
-      
+      {/* ==================== NAVBAR - FULLY RESPONSIVE ==================== */}
+      {/* Navbar - Full Width Background */}
      <nav className="fixed top-0 left-0 right-0 bg-white dark:bg-gray-900 transition-colors duration-300 z-50 shadow-md">
   <div className="max-w-[1200px] mx-auto px-4 py-3">
     <div className="flex justify-between items-center">
@@ -990,112 +991,53 @@ export function App() {
       </section>
 
       {/* Projects Section - Full Width */}
-     <section
-  id="projects"
-  className="w-full py-20 bg-gradient-to-br from-white via-gray-50 to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden"
->
-  <div className="max-w-[1200px] mx-auto px-4">
-    {/* Animated Heading */}
-    <div className="text-center mb-16">
-      <h2 className="text-4xl md:text-5xl font-bold mb-4">
-        <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-gradient bg-300%">
-          My Creative Projects
-        </span>
-      </h2>
-      <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full animate-pulse"></div>
-      <p className="text-gray-600 dark:text-gray-400 mt-4 max-w-2xl mx-auto">
-        Here are some of my recent works that showcase my skills and creativity
-      </p>
-    </div>
-
-    {/* Projects Grid */}
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {projects.map((project, index) => (
-        <div
-          key={project.id}
-          className="group relative rounded-2xl overflow-hidden bg-white dark:bg-gray-800 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 animate-fade-in-up"
-          style={{ animationDelay: `${index * 0.1}s` }}
-        >
-          {/* Image Container with Overlay */}
-          <div className="relative overflow-hidden h-56">
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-            />
-            
-            {/* Animated Overlay on Hover */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center">
-              <button className="transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 bg-white/20 backdrop-blur-md text-white px-6 py-2 rounded-full hover:bg-white/30">
-                View Project →
-              </button>
-            </div>
-          </div>
-
-          {/* Content */}
-          <div className="p-6 relative">
-            {/* Animated Tech Tags */}
-            <div className="flex flex-wrap gap-2 mb-4">
-              {project.tech.slice(0, 3).map((tech, idx) => (
-                <span
-                  key={idx}
-                  className="text-xs font-medium px-3 py-1 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20 hover:scale-105 transition-transform duration-300"
-                >
-                  {tech}
-                </span>
-              ))}
-              {project.tech.length > 3 && (
-                <span className="text-xs font-medium px-3 py-1 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-400">
-                  +{project.tech.length - 3}
-                </span>
-              )}
-            </div>
-
-            {/* Title with Hover Effect */}
-            <h3 className="text-xl font-bold mb-2 text-gray-800 dark:text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 group-hover:bg-clip-text transition-all duration-300">
-              {project.title}
-            </h3>
-
-            {/* Description */}
-            <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-2">
-              {project.description}
-            </p>
-
-            {/* View Details Link */}
-            <div className="flex justify-between items-center">
-              <a
-                href={project.link}
-                className="text-blue-600 dark:text-blue-400 text-sm font-medium inline-flex items-center gap-1 group/link hover:gap-2 transition-all duration-300"
+      <section
+        id="projects"
+        className="w-full slide-in-right  py-20 bg-white dark:bg-gray-900"
+      >
+        <div className="max-w-[1200px] mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-gradient">
+              My Projects
+            </span>
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project) => (
+              <div
+                key={project.id}
+                className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 bg-white dark:bg-gray-800"
               >
-                View Details
-                <svg className="w-4 h-4 transition-transform group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
-              
-              {/* Animated Icon */}
-              <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center animate-bounce">
-                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
+                <div className="relative overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                </div>
+                <div className="p-5">
+                  <h3 className="text-xl font-bold mb-2 text-gray-800 dark:text-white">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm mb-3">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap justify-center gap-2 mb-4">
+                    {project.tech.map((tech, idx) => (
+                      <span
+                        key={idx}
+                        className="text-xs bg-gray-300 dark:bg-gray-300 text-gray-600 dark:text-black  px-2 py-1 rounded-full"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
-      ))}
-    </div>
-
-    {/* View All Projects Button */}
-    <div className="text-center mt-12">
-      <button className="group relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-bold text-white bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
-        <span className="relative z-10">View All Projects</span>
-        <div className="absolute inset-0 bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 translate-x-full group-hover:translate-x-0 transition-transform duration-500"></div>
-      </button>
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* Experience Section - Full Width */}
      <section
