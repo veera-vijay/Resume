@@ -10,20 +10,7 @@ export function App() {
     email: "",
     message: "",
   });
-  // Add this function inside your App component
-  const getProgressColor = (percentage) => {
-    if (percentage >= 90) {
-      return { from: "#10B981", to: "#059669", label: "Expert" }; // Green - Expert
-    } else if (percentage >= 80) {
-      return { from: "#3B82F6", to: "#2563EB", label: "Advanced" }; // Blue - Advanced
-    } else if (percentage >= 70) {
-      return { from: "#F59E0B", to: "#D97706", label: "Intermediate" }; // Orange - Intermediate
-    } else if (percentage >= 60) {
-      return { from: "#F97316", to: "#EA580C", label: "Beginner" }; // Orange - Beginner
-    } else {
-      return { from: "#EF4444", to: "#DC2626", label: "Learning" }; // Red - Learning
-    }
-  };
+  
   // Scroll Animation - Reveal sections when visible
   useEffect(() => {
     const revealElements = document.querySelectorAll(
@@ -167,7 +154,7 @@ export function App() {
 
   // Familiar With Skills
   const familiarSkills = [
-    { name: "Next.js", icon: <img width="48" height="48"  src="https://img.icons8.com/hatch/64/triangle.png" alt="triangle"/> },
+    { name: "Next.js", icon: <img width="48" height="48"  className="dark:brightness-0 dark:invert"  src="https://img.icons8.com/hatch/64/triangle.png" alt="triangle"/> },
    
     {
       name: "Tailwind CSS",
@@ -212,6 +199,7 @@ export function App() {
           height="48"
           src="https://img.icons8.com/sf-regular/48/github.png"
           alt="github"
+          className="dark:brightness-0 dark:invert"
          
         />
       )
@@ -412,16 +400,12 @@ export function App() {
                   height="18"
                   src="https://img.icons8.com/ios-filled/50/filled-message.png"
                   alt="email"
-                  className="brightness-0 invert w-4 h-4 sm:w-5 sm:h-5"
+                  className=" dark:brightness-0  dark:invert w-4 h-4 sm:w-5 sm:h-5"
                 />
                 <span>veera53631@gmail.com</span>
               </a>
             </div>
-            {/* <div className="absolute bottom-10 left-98 transform -translate-x-1/2 animate-bounce-slow cursor-pointer">
-              <div className="w-6 h-10 border-2 border-gray-400 dark:border-gray-600 rounded-full flex justify-center">
-                <div className="w-1 h-2 bg-gray-400 dark:bg-gray-600 rounded-full mt-2 animate-scroll-down"></div>
-              </div>
-            </div> */}
+         
             <div className="group relative">
               <a
                 href="https://github.com/veera-vijay"
@@ -434,7 +418,7 @@ export function App() {
                   height="18"
                   src="https://img.icons8.com/sf-black-filled/64/github.png"
                   alt="github"
-                  className="brightness-0 invert w-4 h-4 sm:w-5 sm:h-5"
+                  className=" dark:brightness-0  dark:invert w-4 h-4 sm:w-5 sm:h-5"
                 />
                 <span>github.com/veera-vijay</span>
               </a>
