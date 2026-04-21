@@ -177,7 +177,9 @@ code {
   opacity: 1;
   transform: scale(1);
 }
-
+.animation-stopped {
+  animation-play-state: paused !important;
+}
 
 /* Progress Circle Colors */
 .progress-circle[data-percentage="90"] circle:last-child,
