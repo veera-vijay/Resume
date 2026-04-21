@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import resume from "./vijay resume.pdf"
 export function App() {
@@ -114,7 +115,8 @@ export function App() {
     {
       id: 1,
       title: "E-Commerce Website",
-      description: "Cloud-Based Electronic Health Record (EHR) System.",
+      description:
+        "Mini e-commerce site with product display and shopping cart.",
       tech: ["Javascript", "Tailwind CSS", "React"],
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400",
       githubLink: "https://github.com/veera-vijay",
@@ -1145,7 +1147,8 @@ export function App() {
                   {/* Enhanced Tags with 3D Hover */}
                   <div className="flex flex-wrap gap-3 mb-4">
                     <span className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-110 hover:shadow-lg hover:-translate-y-1 cursor-default">
-                     
+                      {/* <span className="text-lg animate-pulse-slow">🏢</span>{" "} */}
+                      {exp.company}
                     </span>
                     <span className="inline-flex items-center gap-2 px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-110 hover:shadow-lg hover:-translate-y-1 cursor-default">
                       <span className="text-lg ">📅</span>{" "}
@@ -1184,6 +1187,7 @@ export function App() {
                     </div>
                   </div>
 
+                 
                  
                 </div>
               </div>
