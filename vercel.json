@@ -1,8 +1,8 @@
 {
-  "buildCommand": "npm ci --include=dev && npx vite build",
+  "installCommand": "npm install --legacy-peer-deps",
+  "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "devCommand": "npm run dev",
-  "installCommand": "npm install --include=dev",
   "framework": "vite",
   "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }
+git add vercel.json
