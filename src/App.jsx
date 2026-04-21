@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from "react";
 import resume from "./vijay resume.pdf"
 export function App() {
@@ -1147,11 +1145,10 @@ export function App() {
                   {/* Enhanced Tags with 3D Hover */}
                   <div className="flex flex-wrap gap-3 mb-4">
                     <span className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-110 hover:shadow-lg hover:-translate-y-1 cursor-default">
-                      <span className="text-lg animate-pulse-slow">🏢</span>{" "}
-                      {exp.company}
+                     
                     </span>
                     <span className="inline-flex items-center gap-2 px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-110 hover:shadow-lg hover:-translate-y-1 cursor-default">
-                      <span className="text-lg animate-spin-slow">📅</span>{" "}
+                      <span className="text-lg ">📅</span>{" "}
                       {exp.duration}
                     </span>
                   </div>
@@ -1187,23 +1184,7 @@ export function App() {
                     </div>
                   </div>
 
-                  {/* View Details Button with Arrow Animation */}
-                  <button className="mt-4 text-sm text-orange-600 dark:text-orange-400 font-semibold flex items-center gap-2 group/btn transition-all duration-300 hover:gap-3">
-                    View Details
-                    <svg
-                      className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-1"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                  </button>
+                 
                 </div>
               </div>
             </div>
