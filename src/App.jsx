@@ -155,7 +155,7 @@ export function App() {
 
   // Familiar With Skills
   const familiarSkills = [
-    { name: "Next.js", icon: <img width="48" height="48"  className="dark:brightness-0 dark:invert"  src="https://img.icons8.com/hatch/64/triangle.png" alt="triangle"/> },
+    { name: "Next.js" ,icon:( <img width="48" height="48"  className="dark:brightness-0 dark:invert"  src="https://img.icons8.com/hatch/64/triangle.png" alt="triangle"/> )},
    
     {
       name: "Tailwind CSS",
@@ -200,7 +200,7 @@ export function App() {
           height="48"
           src="https://img.icons8.com/sf-regular/48/github.png"
           alt="github"
-          className="dark:brightness-0 dark:invert"
+          className="dark:brightness-0 dark:invert "
          
         />
       )
@@ -378,7 +378,6 @@ export function App() {
           <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8 px-4">
             Passionate about building modern web applications. Looking for my
             first opportunity as a MERN Stack Developer.
-            {/* <span className="inline-block ml-2 ">🚀</span> */}
           </p>
 
           <div className="flex gap-3 sm:gap-4 justify-center flex-wrap px-2">
@@ -521,566 +520,616 @@ export function App() {
           <div className="">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {/* 1. HTML/CSS Card - 92% Green Gradient */}
-              <div className="group relative bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                <div className="flex flex-col items-center text-center">
-                  <div className="mb-3">
-                    <span className="text-5xl">🌐</span>
-                  </div>
-                  <div className="relative w-28 h-28 mb-3">
-                    <svg className="w-28 h-28 transform -rotate-90">
-                      <defs>
-                        <linearGradient
-                          id="gradient1"
-                          x1="0%"
-                          y1="0%"
-                          x2="100%"
-                          y2="100%"
-                        >
-                          <stop offset="0%" stopColor="#10B981" />
-                          <stop offset="100%" stopColor="#34D399" />
-                        </linearGradient>
-                      </defs>
-                      <circle
-                        cx="56"
-                        cy="56"
-                        r="50"
-                        stroke="#e5e7eb"
-                        strokeWidth="6"
-                        fill="none"
-                      />
-                      <circle
-                        cx="56"
-                        cy="56"
-                        r="50"
-                        stroke="url(#gradient1)"
-                        strokeWidth="6"
-                        fill="none"
-                        strokeDasharray="314.16"
-                        strokeDashoffset={314.16 * (1 - 0.92)}
-                        className="transition-all duration-1000 ease-out"
-                      />
-                    </svg>
-                    <div className="absolute inset-1 flex flex-col items-center justify-center">
-                      <span className="text-xl font-bold text-green-600 dark:text-green-400 text-center">
-                        92%
-                      </span>
-                      <span className="text-[10px] text-green-600 dark:text-green-400 text-center">
-                        Expert
-                      </span>
-                    </div>
-                  </div>
-                  <h4 className="text-base font-bold text-gray-800 dark:text-white">
-                    HTML5 & CSS3
-                  </h4>
-                  <p className="text-xs text-gray-500 dark:text-gray-400">
-                    Markup & Styling
-                  </p>
-                </div>
-              </div>
+           <div className="group relative bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
+    <div className="flex flex-col items-center text-center">
+      <div className="mb-3">
+        <span className="text-5xl animate-bounce">🌐</span>
+      </div>
+      <div className="relative w-28 h-28 mb-3 mx-auto">
+        <svg className="w-full h-full transform -rotate-90" viewBox="0 0 112 112">
+          <defs>
+            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#10B981">
+                <animate attributeName="stop-color" values="#10B981;#34D399;#059669;#10B981" dur="3s" repeatCount="indefinite" />
+              </stop>
+              <stop offset="100%" stopColor="#34D399">
+                <animate attributeName="stop-color" values="#34D399;#059669;#10B981;#34D399" dur="3s" repeatCount="indefinite" />
+              </stop>
+            </linearGradient>
+            <filter id="glow1">
+              <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+          <circle cx="56" cy="56" r="50" stroke="#e5e7eb" strokeWidth="6" fill="none" className="dark:stroke-gray-700"/>
+          <circle cx="56" cy="56" r="50" stroke="url(#gradient1)" strokeWidth="6" fill="none" strokeDasharray="314.16" strokeDashoffset={314.16 * (1 - 0.92)} strokeLinecap="round" filter="url(#glow1)">
+            <animate attributeName="stroke-dashoffset" from="314.16" to={314.16 * (1 - 0.92)} dur="1.5s" fill="freeze"/>
+          </circle>
+          <circle cx="56" cy="56" r="54" fill="none" stroke="url(#gradient1)" strokeWidth="1" strokeDasharray="10 20" opacity="0.3">
+            <animateTransform attributeName="transform" type="rotate" from="0 56 56" to="360 56 56" dur="3s" repeatCount="indefinite"/>
+          </circle>
+        </svg>
+        <div className="absolute inset-0 flex flex-col items-center justify-center">
+          <span className="text-xl font-bold bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent animate-pulse">92%</span>
+          <span className="text-[10px] text-green-600 dark:text-green-400 animate-pulse mt-0.5">Expert</span>
+        </div>
+      </div>
+      <h4 className="text-base font-bold text-gray-800 dark:text-white">HTML5 & CSS3</h4>
+      <p className="text-xs text-gray-500 dark:text-gray-400">Markup & Styling</p>
+    </div>
+  </div>
+
 
               {/* 2. JavaScript Card - 88% Blue Gradient */}
-              <div className="group relative bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                <div className="flex flex-col items-center text-center">
-                  <div className="mb-3">
-                    <span className="text-5xl">
-                      <img
-                        width="44"
-                        height="44"
-                        src="https://img.icons8.com/plasticine/100/javascript-logo.png"
-                        alt="javascript-logo"
-                      />
-                    </span>
-                  </div>
-                  <div className="relative w-28 h-28 mb-3">
-                    <svg className="w-28 h-28 transform -rotate-90">
-                      <defs>
-                        <linearGradient
-                          id="gradient2"
-                          x1="0%"
-                          y1="0%"
-                          x2="100%"
-                          y2="100%"
-                        >
-                          <stop offset="0%" stopColor="#3B82F6" />
-                          <stop offset="100%" stopColor="#60A5FA" />
-                        </linearGradient>
-                      </defs>
-                      <circle
-                        cx="56"
-                        cy="56"
-                        r="50"
-                        stroke="#e5e7eb"
-                        strokeWidth="6"
-                        fill="none"
-                      />
-                      <circle
-                        cx="56"
-                        cy="56"
-                        r="50"
-                        stroke="url(#gradient2)"
-                        strokeWidth="6"
-                        fill="none"
-                        strokeDasharray="314.16"
-                        strokeDashoffset={314.16 * (1 - 0.88)}
-                      />
-                    </svg>
-                    <div className="absolute inset-0 flex flex-col items-center justify-center">
-                      <span className="text-xl font-bold text-blue-600 dark:text-blue-400">
-                        88%
-                      </span>
-                      <span className="text-[10px] text-blue-600 dark:text-blue-400">
-                        Advanced
-                      </span>
-                    </div>
-                  </div>
-                  <h4 className="text-base font-bold text-gray-800 dark:text-white">
-                    JavaScript
-                  </h4>
-                  <p className="text-xs text-gray-500 dark:text-gray-400">
-                    Core Language
-                  </p>
-                </div>
-              </div>
+       <div className="group relative bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
+  <div className="flex flex-col items-center text-center">
+    <div className="mb-3">
+      <span className="text-5xl">
+        <img
+          width="44"
+          height="44"
+          src="https://img.icons8.com/plasticine/100/javascript-logo.png"
+          alt="javascript-logo"
+        />
+      </span>
+    </div>
+    
+    <div className="relative w-28 h-28 mb-3 mx-auto">
+      <svg className="w-full h-full transform -rotate-90" viewBox="0 0 112 112">
+        <defs>
+          {/* Yellow Gradient - Updated */}
+          <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#EAB308">
+              <animate attributeName="stop-color" values="#EAB308;#FBBF24;#CA8A04;#EAB308" dur="3s" repeatCount="indefinite" />
+            </stop>
+            <stop offset="100%" stopColor="#FBBF24">
+              <animate attributeName="stop-color" values="#FBBF24;#CA8A04;#EAB308;#FBBF24" dur="3s" repeatCount="indefinite" />
+            </stop>
+          </linearGradient>
+          
+          {/* Yellow Glow */}
+          <filter id="glow2">
+            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+        
+        {/* Background Circle - Changed to gray */}
+        <circle cx="56" cy="56" r="50" stroke="#e5e7eb" strokeWidth="6" fill="none" className="dark:stroke-gray-700"/>
+        
+        {/* Yellow Progress Circle */}
+        <circle cx="56" cy="56" r="50" stroke="url(#gradient2)" strokeWidth="6" fill="none" strokeDasharray="314.16" strokeDashoffset={314.16 * (1 - 0.88)} strokeLinecap="round" filter="url(#glow2)">
+          <animate attributeName="stroke-dashoffset" from="314.16" to={314.16 * (1 - 0.88)} dur="1.5s" fill="freeze"/>
+        </circle>
+        
+        {/* Yellow Rotating Ring */}
+        <circle cx="56" cy="56" r="54" fill="none" stroke="url(#gradient2)" strokeWidth="1" strokeDasharray="15 15" opacity="0.3">
+          <animateTransform attributeName="transform" type="rotate" from="360 56 56" to="0 56 56" dur="4s" repeatCount="indefinite"/>
+        </circle>
+      </svg>
+      
+      {/* Center Text - Yellow Gradient */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center">
+        <span className="text-xl font-bold bg-gradient-to-r from-yellow-500 to-amber-500 bg-clip-text text-transparent animate-pulse">
+          88%
+        </span>
+        <span className="text-[10px] text-yellow-600 dark:text-yellow-400 mt-0.5">
+          Advanced
+        </span>
+      </div>
+    </div>
+    
+    <h4 className="text-base font-bold text-gray-800 dark:text-white">JavaScript</h4>
+    <p className="text-xs text-gray-500 dark:text-gray-400">Core Language</p>
+  </div>
+</div>
 
               {/* 3. Tailwind CSS Card - 90% Green Gradient */}
-              <div className="group relative bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                <div className="flex flex-col items-center text-center">
-                  <div className="mb-3">
-                    <span className="text-5xl">
-                      <img
-                        width="48"
-                        height="48"
-                        src="https://img.icons8.com/fluency/48/tailwind_css.png"
-                        alt="tailwind_css"
-                      />
-                    </span>
-                  </div>
-                  <div className="relative w-28 h-28 mb-3">
-                    <svg className="w-28 h-28 transform -rotate-90">
-                      <defs>
-                        <linearGradient
-                          id="gradient3"
-                          x1="0%"
-                          y1="0%"
-                          x2="100%"
-                          y2="100%"
-                        >
-                          <stop offset="0%" stopColor="#10B981" />
-                          <stop offset="100%" stopColor="#34D399" />
-                        </linearGradient>
-                      </defs>
-                      <circle
-                        cx="56"
-                        cy="56"
-                        r="50"
-                        stroke="#e5e7eb"
-                        strokeWidth="6"
-                        fill="none"
-                      />
-                      <circle
-                        cx="56"
-                        cy="56"
-                        r="50"
-                        stroke="url(#gradient3)"
-                        strokeWidth="6"
-                        fill="none"
-                        strokeDasharray="314.16"
-                        strokeDashoffset={314.16 * (1 - 0.9)}
-                      />
-                    </svg>
-                    <div className="absolute inset-0 flex flex-col items-center justify-center">
-                      <span className="text-xl font-bold text-green-600 dark:text-green-400">
-                        90%
-                      </span>
-                      <span className="text-[10px] text-green-600 dark:text-green-400">
-                        Expert
-                      </span>
-                    </div>
-                  </div>
-                  <h4 className="text-base font-bold text-gray-800 dark:text-white">
-                    Tailwind CSS
-                  </h4>
-                  <p className="text-xs text-gray-500 dark:text-gray-400">
-                    Utility Framework
-                  </p>
-                </div>
-              </div>
+          <div className="group relative bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
+  <div className="flex flex-col items-center text-center">
+    <div className="mb-3">
+      <span className="text-5xl">
+        <img
+          width="48"
+          height="48"
+          src="https://img.icons8.com/fluency/48/tailwind_css.png"
+          alt="tailwind_css"
+        />
+      </span>
+    </div>
+    
+    <div className="relative w-28 h-28 mb-3 mx-auto">
+      <svg className="w-full h-full transform -rotate-90" viewBox="0 0 112 112">
+        <defs>
+          {/* Blue Gradient */}
+          <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#3B82F6">
+              <animate attributeName="stop-color" values="#3B82F6;#60A5FA;#2563EB;#3B82F6" dur="3s" repeatCount="indefinite" />
+            </stop>
+            <stop offset="100%" stopColor="#60A5FA">
+              <animate attributeName="stop-color" values="#60A5FA;#2563EB;#3B82F6;#60A5FA" dur="3s" repeatCount="indefinite" />
+            </stop>
+          </linearGradient>
+          
+          {/* Blue Glow Effect */}
+          <filter id="glow3">
+            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+        
+        {/* Background Circle */}
+        <circle cx="56" cy="56" r="50" stroke="#e5e7eb" strokeWidth="6" fill="none" className="dark:stroke-gray-700"/>
+        
+        {/* Blue Progress Circle */}
+        <circle cx="56" cy="56" r="50" stroke="url(#gradient3)" strokeWidth="6" fill="none" strokeDasharray="314.16" strokeDashoffset={314.16 * (1 - 0.9)} strokeLinecap="round" filter="url(#glow3)">
+          <animate attributeName="stroke-dashoffset" from="314.16" to={314.16 * (1 - 0.9)} dur="1.5s" fill="freeze"/>
+        </circle>
+        
+        {/* Blue Rotating Ring */}
+        <circle cx="56" cy="56" r="54" fill="none" stroke="url(#gradient3)" strokeWidth="1" strokeDasharray="10 20" opacity="0.3">
+          <animateTransform attributeName="transform" type="rotate" from="0 56 56" to="360 56 56" dur="3s" repeatCount="indefinite"/>
+        </circle>
+      </svg>
+      
+      {/* Center Text - Blue colors */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center">
+        <span className="text-xl font-bold bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent animate-pulse">
+          90%
+        </span>
+        <span className="text-[10px] text-blue-600 dark:text-blue-400 mt-0.5">
+          Expert
+        </span>
+      </div>
+    </div>
+    
+    <h4 className="text-base font-bold text-gray-800 dark:text-white">Tailwind CSS</h4>
+    <p className="text-xs text-gray-500 dark:text-gray-400">Utility Framework</p>
+  </div>
+</div>
 
               {/* 4. React.js Card - 83% Purple Gradient */}
-              <div className="group relative bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                <div className="flex flex-col items-center text-center">
-                  <div className="mb-3">
-                    <span className="text-5xl animate-spin-slow">
-                      <img
-                        width="44"
-                        height="44"
-                        src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-react-a-javascript-library-for-building-user-interfaces-logo-color-tal-revivo.png"
-                        alt="external-react-a-javascript-library-for-building-user-interfaces-logo-color-tal-revivo"
-                      />
-                    </span>
-                  </div>
-                  <div className="relative w-28 h-28 mb-3">
-                    <svg className="w-28 h-28 transform -rotate-90">
-                      <defs>
-                        <linearGradient
-                          id="gradient4"
-                          x1="0%"
-                          y1="0%"
-                          x2="100%"
-                          y2="100%"
-                        >
-                          <stop offset="0%" stopColor="#9110b9" />
-                          <stop offset="100%" stopColor="#C084FC" />
-                        </linearGradient>
-                      </defs>
-                      <circle
-                        cx="56"
-                        cy="56"
-                        r="50"
-                        stroke="#e5e7eb"
-                        strokeWidth="6"
-                        fill="none"
-                      />
-                      <circle
-                        cx="56"
-                        cy="56"
-                        r="50"
-                        stroke="url(#gradient4)"
-                        strokeWidth="6"
-                        fill="none"
-                        strokeDasharray="314.16"
-                        strokeDashoffset={314.16 * (1 - 0.83)}
-                      />
-                    </svg>
-                    <div className="absolute inset-0 flex flex-col items-center justify-center">
-                      <span className="text-xl font-bold text-purple-600 dark:text-purple-400">
-                        83%
-                      </span>
-                      <span className="text-[10px] text-purple-600 dark:text-purple-400">
-                        Advance
-                      </span>
-                    </div>
-                  </div>
-                  <h4 className="text-base font-bold text-gray-800 dark:text-white">
-                    React.js
-                  </h4>
-                  <p className="text-xs text-gray-500 dark:text-gray-400">
-                    UI Library
-                  </p>
-                </div>
-              </div>
+            <div className="group relative bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
+  <div className="flex flex-col items-center text-center">
+    <div className="mb-3 animate-spin-slow">
+      <span className="text-5xl">
+        <img
+          width="44"
+          height="44"
+          src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-react-a-javascript-library-for-building-user-interfaces-logo-color-tal-revivo.png"
+          alt="react"
+          className="transition-all duration-300 group-hover:scale-110"
+        />
+      </span>
+    </div>
+    
+    <div className="relative w-28 h-28 mb-3 mx-auto">
+      <svg className="w-full h-full transform -rotate-90" viewBox="0 0 112 112">
+        <defs>
+          {/* React Blue Gradient - Official Color #61DAFB */}
+          <linearGradient id="reactGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#61DAFB">
+              <animate attributeName="stop-color" values="#61DAFB;#00D8FF;#4FA8D6;#61DAFB" dur="3s" repeatCount="indefinite" />
+            </stop>
+            <stop offset="100%" stopColor="#00D8FF">
+              <animate attributeName="stop-color" values="#00D8FF;#4FA8D6;#61DAFB;#00D8FF" dur="3s" repeatCount="indefinite" />
+            </stop>
+          </linearGradient>
+          
+          {/* Blue Glow Effect */}
+          <filter id="reactGlow">
+            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+        
+        {/* Background Circle */}
+        <circle cx="56" cy="56" r="50" stroke="#e5e7eb" strokeWidth="6" fill="none" className="dark:stroke-gray-700"/>
+        
+        {/* React Blue Progress Circle */}
+        <circle cx="56" cy="56" r="50" stroke="url(#reactGradient)" strokeWidth="6" fill="none" strokeDasharray="314.16" strokeDashoffset={314.16 * (1 - 0.83)} strokeLinecap="round" filter="url(#reactGlow)">
+          <animate attributeName="stroke-dashoffset" from="314.16" to={314.16 * (1 - 0.83)} dur="1.5s" fill="freeze"/>
+        </circle>
+        
+        {/* Rotating Ring */}
+        <circle cx="56" cy="56" r="54" fill="none" stroke="url(#reactGradient)" strokeWidth="1" strokeDasharray="12 18" opacity="0.3">
+          <animateTransform attributeName="transform" type="rotate" from="360 56 56" to="0 56 56" dur="4s" repeatCount="indefinite"/>
+        </circle>
+      </svg>
+      
+      {/* Center Text - Blue Gradient */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center">
+        <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent animate-pulse">
+          83%
+        </span>
+        <span className="text-[10px] text-cyan-600 dark:text-cyan-400 mt-0.5">
+          Advanced
+        </span>
+      </div>
+    </div>
+    
+    <h4 className="text-base font-bold text-gray-800 dark:text-white">React.js</h4>
+    <p className="text-xs text-gray-500 dark:text-gray-400">UI Library</p>
+  </div>
+</div>
 
               {/* 5. TypeScript Card - 82% Blue Gradient */}
-              <div className="group relative bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                <div className="flex flex-col items-center text-center">
-                  <div className="mb-3">
-                    <span className="text-5xl">
-                      <img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
-                        width="48"
-                        height="48"
-                        alt="TypeScript"
-                      />
-                    </span>
-                  </div>
-                  <div className="relative w-28 h-28 mb-3">
-                    <svg className="w-28 h-28 transform -rotate-90">
-                      <defs>
-                        <linearGradient
-                          id="gradient5"
-                          x1="0%"
-                          y1="0%"
-                          x2="100%"
-                          y2="100%"
-                        >
-                          <stop offset="0%" stopColor="#3B82F6" />
-                          <stop offset="100%" stopColor="#60A5FA" />
-                        </linearGradient>
-                      </defs>
-                      <circle
-                        cx="56"
-                        cy="56"
-                        r="50"
-                        stroke="#e5e7eb"
-                        strokeWidth="6"
-                        fill="none"
-                      />
-                      <circle
-                        cx="56"
-                        cy="56"
-                        r="50"
-                        stroke="url(#gradient5)"
-                        strokeWidth="6"
-                        fill="none"
-                        strokeDasharray="314.16"
-                        strokeDashoffset={314.16 * (1 - 0.82)}
-                      />
-                    </svg>
-                    <div className="absolute inset-0 flex flex-col items-center justify-center">
-                      <span className="text-xl font-bold text-blue-600 dark:text-blue-400">
-                        82%
-                      </span>
-                      <span className="text-[10px] text-blue-600 dark:text-blue-400">
-                        Advanced
-                      </span>
-                    </div>
-                  </div>
-                  <h4 className="text-base font-bold text-gray-800 dark:text-white">
-                    TypeScript
-                  </h4>
-                  <p className="text-xs text-gray-500 dark:text-gray-400">
-                    Typed JavaScript
-                  </p>
-                </div>
-              </div>
-
-              {/* 6. Node.js Card - 85% Green Gradient */}
-              <div className="group relative bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                <div className="flex flex-col items-center text-center">
-                  <div className="mb-3">
-                    <span className="text-5xl">
-                      <img
-                        width="48"
-                        height="48"
-                        src="https://img.icons8.com/fluency/48/node-js.png"
-                        alt="node-js"
-                      />
-                    </span>
-                  </div>
-                  <div className="relative w-28 h-28 mb-3">
-                    <svg className="w-28 h-28 transform -rotate-90">
-                      <defs>
-                        <linearGradient
-                          id="gradient6"
-                          x1="0%"
-                          y1="0%"
-                          x2="100%"
-                          y2="100%"
-                        >
-                          <stop offset="0%" stopColor="#0b681c" />
-                          <stop offset="100%" stopColor="#22C55E" />
-                        </linearGradient>
-                      </defs>
-                      <circle
-                        cx="56"
-                        cy="56"
-                        r="50"
-                        stroke="#e5e7eb"
-                        strokeWidth="6"
-                        fill="none"
-                      />
-                      <circle
-                        cx="56"
-                        cy="56"
-                        r="50"
-                        stroke="url(#gradient6)"
-                        strokeWidth="6"
-                        fill="none"
-                        strokeDasharray="314.16"
-                        strokeDashoffset={314.16 * (1 - 0.85)}
-                      />
-                    </svg>
-                    <div className="absolute inset-0 flex flex-col items-center justify-center">
-                      <span className="text-xl font-bold text-green-600 dark:text-green-400">
-                        85%
-                      </span>
-                      <span className="text-[10px] text-green-600 dark:text-green-400">
-                        Advanced
-                      </span>
-                    </div>
-                  </div>
-                  <h4 className="text-base font-bold text-gray-800 dark:text-white">
-                    Node.js
-                  </h4>
-                  <p className="text-xs text-gray-500 dark:text-gray-400">
-                    Backend Runtime
-                  </p>
-                </div>
-              </div>
+            <div className="group relative bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
+  <div className="flex flex-col items-center text-center">
+    <div className="mb-3">
+      <span className="text-5xl">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+          width="48"
+          height="48"
+          alt="TypeScript"
+        />
+      </span>
+    </div>
+    
+    <div className="relative w-28 h-28 mb-3 mx-auto">
+      <svg className="w-full h-full transform -rotate-90" viewBox="0 0 112 112">
+        <defs>
+          {/* TypeScript Blue Gradient */}
+          <linearGradient id="gradient5" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#3178C6">
+              <animate attributeName="stop-color" values="#3178C6;#3B82F6;#2563EB;#3178C6" dur="3s" repeatCount="indefinite" />
+            </stop>
+            <stop offset="100%" stopColor="#3B82F6">
+              <animate attributeName="stop-color" values="#3B82F6;#2563EB;#3178C6;#3B82F6" dur="3s" repeatCount="indefinite" />
+            </stop>
+          </linearGradient>
+          
+          {/* Blue Glow */}
+          <filter id="glow5">
+            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+        
+        <circle cx="56" cy="56" r="50" stroke="#e5e7eb" strokeWidth="6" fill="none" className="dark:stroke-gray-700"/>
+        
+        {/* Blue Progress Circle */}
+        <circle cx="56" cy="56" r="50" stroke="url(#gradient5)" strokeWidth="6" fill="none" strokeDasharray="314.16" strokeDashoffset={314.16 * (1 - 0.82)} strokeLinecap="round" filter="url(#glow5)">
+          <animate attributeName="stroke-dashoffset" from="314.16" to={314.16 * (1 - 0.82)} dur="1.5s" fill="freeze"/>
+        </circle>
+        
+        {/* Rotating Blue Ring */}
+        <circle cx="56" cy="56" r="54" fill="none" stroke="url(#gradient5)" strokeWidth="1" strokeDasharray="8 22" opacity="0.3">
+          <animateTransform attributeName="transform" type="rotate" from="0 56 56" to="360 56 56" dur="3.5s" repeatCount="indefinite"/>
+        </circle>
+      </svg>
+      
+      {/* Center Text - Blue */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center">
+        <span className="text-xl font-bold bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
+          82%
+        </span>
+        <span className="text-[10px] text-blue-600 dark:text-blue-400">
+          Advanced
+        </span>
+      </div>
+    </div>
+    
+    <h4 className="text-base font-bold text-gray-800 dark:text-white">TypeScript</h4>
+    <p className="text-xs text-gray-500 dark:text-gray-400">Typed JavaScript</p>
+  </div>
+</div>
+            {/* 6. Node.js Card - 85% Green Gradient */}
+<div className="group relative bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
+  <div className="flex flex-col items-center text-center">
+    <div className="mb-3 ">
+      <span className="text-5xl">
+        <img
+          width="48"
+          height="48"
+          src="https://img.icons8.com/fluency/48/node-js.png"
+          alt="node-js"
+          className="transition-all duration-300 group-hover:scale-110"
+        />
+      </span>
+    </div>
+    
+    <div className="relative w-28 h-28 mb-3 mx-auto">
+      <svg className="w-full h-full transform -rotate-90" viewBox="0 0 112 112">
+        <defs>
+          {/* Node.js Green Gradient - Official Color #339933 */}
+          <linearGradient id="gradient6" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#339933">
+              <animate attributeName="stop-color" values="#339933;#22C55E;#059669;#339933" dur="3s" repeatCount="indefinite" />
+            </stop>
+            <stop offset="100%" stopColor="#22C55E">
+              <animate attributeName="stop-color" values="#22C55E;#059669;#339933;#22C55E" dur="3s" repeatCount="indefinite" />
+            </stop>
+          </linearGradient>
+          
+          {/* Green Glow Effect */}
+          <filter id="glow6">
+            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+        
+        {/* Background Circle */}
+        <circle cx="56" cy="56" r="50" stroke="#e5e7eb" strokeWidth="6" fill="none" className="dark:stroke-gray-700"/>
+        
+        {/* Green Progress Circle */}
+        <circle cx="56" cy="56" r="50" stroke="url(#gradient6)" strokeWidth="6" fill="none" strokeDasharray="314.16" strokeDashoffset={314.16 * (1 - 0.85)} strokeLinecap="round" filter="url(#glow6)">
+          <animate attributeName="stroke-dashoffset" from="314.16" to={314.16 * (1 - 0.85)} dur="1.5s" fill="freeze"/>
+        </circle>
+        
+        {/* Rotating Green Ring */}
+        <circle cx="56" cy="56" r="54" fill="none" stroke="url(#gradient6)" strokeWidth="1" strokeDasharray="10 20" opacity="0.3">
+          <animateTransform attributeName="transform" type="rotate" from="360 56 56" to="0 56 56" dur="3s" repeatCount="indefinite"/>
+        </circle>
+      </svg>
+      
+      {/* Center Text - Green Gradient */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center">
+        <span className="text-xl font-bold bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent animate-pulse">
+          85%
+        </span>
+        <span className="text-[10px] text-green-600 dark:text-green-400 mt-0.5">
+          Advanced
+        </span>
+      </div>
+    </div>
+    
+    <h4 className="text-base font-bold text-gray-800 dark:text-white">Node.js</h4>
+    <p className="text-xs text-gray-500 dark:text-gray-400">Backend Runtime</p>
+  </div>
+</div>
 
               {/* 7. Express.js Card - 85% Pink Gradient */}
-              <div className="group relative bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                <div className="flex flex-col items-center text-center">
-                  <div className="mb-3">
-                    <span className="text-5xl">🚀</span>
-                  </div>
-                  <div className="relative w-28 h-28 mb-3">
-                    <svg className="w-28 h-28 transform -rotate-90">
-                      <defs>
-                        <linearGradient
-                          id="gradient7"
-                          x1="0%"
-                          y1="0%"
-                          x2="100%"
-                          y2="100%"
-                        >
-                          <stop offset="0%" stopColor="#f63bae" />
-                          <stop offset="100%" stopColor="#F472B6" />
-                        </linearGradient>
-                      </defs>
-                      <circle
-                        cx="56"
-                        cy="56"
-                        r="50"
-                        stroke="#e5e7eb"
-                        strokeWidth="6"
-                        fill="none"
-                      />
-                      <circle
-                        cx="56"
-                        cy="56"
-                        r="50"
-                        stroke="url(#gradient7)"
-                        strokeWidth="6"
-                        fill="none"
-                        strokeDasharray="314.16"
-                        strokeDashoffset={314.16 * (1 - 0.85)}
-                      />
-                    </svg>
-                    <div className="absolute inset-0 flex flex-col items-center justify-center">
-                      <span className="text-xl font-bold text-pink-600 dark:text-pink-400">
-                        85%
-                      </span>
-                      <span className="text-[10px] text-pink-600 dark:text-pink-400">
-                        Advanced
-                      </span>
-                    </div>
-                  </div>
-                  <h4 className="text-base font-bold text-gray-800 dark:text-white">
-                    Express.js
-                  </h4>
-                  <p className="text-xs text-gray-500 dark:text-gray-400">
-                    REST APIs
-                  </p>
-                </div>
-              </div>
-
+       <div className="group relative bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
+  <div className="flex flex-col items-center text-center">
+    <div className="mb-3 animate-pulse">
+      <span className="text-5xl inline-block transition-all duration-300 group-hover:scale-110"><img width="40" height="40" src="https://img.icons8.com/office/40/express-js.png" alt="express-js"/></span>
+    </div>
+    
+    <div className="relative w-28 h-28 mb-3 mx-auto">
+      <svg className="w-full h-full transform -rotate-90" viewBox="0 0 112 112">
+        <defs>
+          {/* Express Pink Gradient */}
+          <linearGradient id="gradient7" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#EC4899">
+              <animate attributeName="stop-color" values="#EC4899;#F472B6;#BE185D;#EC4899" dur="3s" repeatCount="indefinite" />
+            </stop>
+            <stop offset="100%" stopColor="#F472B6">
+              <animate attributeName="stop-color" values="#F472B6;#BE185D;#EC4899;#F472B6" dur="3s" repeatCount="indefinite" />
+            </stop>
+          </linearGradient>
+          
+          {/* Pink Glow Effect */}
+          <filter id="glow7">
+            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+        
+        {/* Background Circle */}
+        <circle cx="56" cy="56" r="50" stroke="#e5e7eb" strokeWidth="6" fill="none" className="dark:stroke-gray-700"/>
+        
+        {/* Pink Progress Circle */}
+        <circle cx="56" cy="56" r="50" stroke="url(#gradient7)" strokeWidth="6" fill="none" strokeDasharray="314.16" strokeDashoffset={314.16 * (1 - 0.85)} strokeLinecap="round" filter="url(#glow7)">
+          <animate attributeName="stroke-dashoffset" from="314.16" to={314.16 * (1 - 0.85)} dur="1.5s" fill="freeze"/>
+        </circle>
+        
+        {/* Rotating Pink Ring */}
+        <circle cx="56" cy="56" r="54" fill="none" stroke="url(#gradient7)" strokeWidth="1" strokeDasharray="12 18" opacity="0.3">
+          <animateTransform attributeName="transform" type="rotate" from="0 56 56" to="360 56 56" dur="4s" repeatCount="indefinite"/>
+        </circle>
+      </svg>
+      
+      {/* Center Text - Pink Gradient */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center">
+        <span className="text-xl font-bold bg-gradient-to-r from-pink-500 to-rose-500 bg-clip-text text-transparent animate-pulse">
+          85%
+        </span>
+        <span className="text-[10px] text-pink-600 dark:text-pink-400 mt-0.5">
+          Advanced
+        </span>
+      </div>
+    </div>
+    
+    <h4 className="text-base font-bold text-gray-800 dark:text-white">Express.js</h4>
+    <p className="text-xs text-gray-500 dark:text-gray-400">REST APIs</p>
+  </div>
+</div>
               {/* 8. MongoDB Card - 85% Green Gradient */}
               <div className="group relative bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                <div className="flex flex-col items-center text-center">
-                  <div className="mb-3">
-                    <span className="text-5xl">🍃</span>
-                  </div>
-                  <div className="relative w-28 h-28 mb-3">
-                    <svg className="w-28 h-28 transform -rotate-90">
-                      <defs>
-                        <linearGradient
-                          id="gradient8"
-                          x1="0%"
-                          y1="0%"
-                          x2="100%"
-                          y2="100%"
-                        >
-                          <stop offset="0%" stopColor="#3bf680" />
-                          <stop offset="100%" stopColor="#4ADE80" />
-                        </linearGradient>
-                      </defs>
-                      <circle
-                        cx="56"
-                        cy="56"
-                        r="50"
-                        stroke="#e5e7eb"
-                        strokeWidth="6"
-                        fill="none"
-                      />
-                      <circle
-                        cx="56"
-                        cy="56"
-                        r="50"
-                        stroke="url(#gradient8)"
-                        strokeWidth="6"
-                        fill="none"
-                        strokeDasharray="314.16"
-                        strokeDashoffset={314.16 * (1 - 0.85)}
-                      />
-                    </svg>
-                    <div className="absolute inset-0 flex flex-col items-center justify-center">
-                      <span className="text-xl font-bold text-green-600 dark:text-green-400">
-                        85%
-                      </span>
-                      <span className="text-[10px] text-green-600 dark:text-green-400">
-                        Advanced
-                      </span>
-                    </div>
-                  </div>
-                  <h4 className="text-base font-bold text-gray-800 dark:text-white">
-                    MongoDB
-                  </h4>
-                  <p className="text-xs text-gray-500 dark:text-gray-400">
-                    NoSQL Database
-                  </p>
-                </div>
-              </div>
+  <div className="flex flex-col items-center text-center">
+    <div className="mb-3">
+      <span className="text-5xl animate-bounce">🍃</span>
+    </div>
+    
+    <div className="relative w-28 h-28 mb-3 mx-auto">
+      <svg className="w-full h-full transform -rotate-90" viewBox="0 0 112 112">
+        <defs>
+          {/* Rotating Conic Gradient */}
+          <linearGradient id="gradient8" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#0c9807">
+              <animate attributeName="stop-color" values="#732c2c;#4ecdc4;#45b7d1;#96ceb4;#ff6b6b" dur="4s" repeatCount="indefinite" />
+            </stop>
+            <stop offset="50%" stopColor="#4ecdc4">
+              <animate attributeName="stop-color" values="#4ecdc4;#45b7d1;#96ceb4;#feca57;#4ecdc4" dur="4s" repeatCount="indefinite" />
+            </stop>
+            <stop offset="100%" stopColor="#45b7d1">
+              <animate attributeName="stop-color" values="#45b7d1;#96ceb4;#feca57;#ff6b6b;#45b7d1" dur="4s" repeatCount="indefinite" />
+            </stop>
+          </linearGradient>
+          
+          {/* Shadow/Glow Effect */}
+          <filter id="glow8">
+            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+        
+        <circle
+          cx="56"
+          cy="56"
+          r="50"
+          stroke="#e5e7eb"
+          strokeWidth="6"
+          fill="none"
+          className="dark:stroke-gray-700"
+        />
+        
+        {/* Animated Progress with Stroke Animation */}
+        <circle
+          cx="56"
+          cy="56"
+          r="50"
+          stroke="url(#gradient8)"
+          strokeWidth="6"
+          fill="none"
+          strokeDasharray="314.16"
+          strokeDashoffset={314.16 * (1 - 0.85)}
+          strokeLinecap="round"
+          filter="url(#glow8)"
+        >
+          <animate
+            attributeName="stroke-dashoffset"
+            from="314.16"
+            to={314.16 * (1 - 0.85)}
+            dur="2s"
+            fill="freeze"
+          />
+        </circle>
+        
+        {/* Rotating Ring Effect */}
+        <circle
+          cx="56"
+          cy="56"
+          r="54"
+          fill="none"
+          stroke="url(#gradient8)"
+          strokeWidth="1"
+          strokeDasharray="10 20"
+          opacity="0.3"
+        >
+          <animateTransform
+            attributeName="transform"
+            type="rotate"
+            from="0 56 56"
+            to="360 56 56"
+            dur="3s"
+            repeatCount="indefinite"
+          />
+        </circle>
+      </svg>
+      
+      <div className="absolute inset-0 flex flex-col items-center justify-center">
+        <span className="text-xl font-bold bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent ">
+          85%
+        </span>
+        <span className="text-[10px] text-green-600 dark:text-green-400 animate-pulse mt-0.5">
+          Advanced
+        </span>
+      </div>
+    </div>
+    
+    <h4 className="text-base font-bold text-gray-800 dark:text-white">
+      MongoDB
+    </h4>
+    <p className="text-xs text-gray-500 dark:text-gray-400">
+      NoSQL Database
+    </p>
+  </div>
+</div>
             </div>
           </div>
 
           {/* Familiar With - Same height cards */}
-          <div className="relative mt-16 overflow-hidden">
-            <div className="absolute left-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-r from-blue-50 dark:from-gray-800 to-transparent pointer-events-none"></div>
-            <div className="absolute right-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-l from-purple-50 dark:from-gray-800 to-transparent pointer-events-none"></div>
+         <div className="relative mt-16 overflow-hidden">
+  <div className="absolute left-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-r from-blue-50 dark:from-gray-800 to-transparent pointer-events-none"></div>
+  <div className="absolute right-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-l from-purple-50 dark:from-gray-800 to-transparent pointer-events-none"></div>
 
-            <h3 className="text-2xl font-bold text-center mb-8 text-gray-800 dark:text-white flex items-center justify-center gap-3">
-              Also Familiar With
-              <span className="text-3xl animate-bounce-slow">✨</span>
-            </h3>
+  <h3 className="text-2xl font-bold text-center mb-8 text-gray-800 dark:text-white flex items-center justify-center gap-3">
+    Also Familiar With
+  </h3>
 
-            <div
-              className="relative flex overflow-x-hidden py-4"
-              onMouseEnter={() => setIsHovering(true)}
-              onMouseLeave={() => setIsHovering(false)}
-            >
-              {/* First marquee row */}
-              <div
-                className={`flex gap-4 ${!isHovering ? "animate-marquee" : ""}`}
-              >
-                {familiarSkills.map((skill, index) => (
-                  <div
-                    key={`first-${index}`}
-                    className="group relative min-w-[140px] h-[120px]"
-                  >
-                    <div className="relative bg-white dark:bg-gray-800 rounded-xl p-4 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer border border-gray-200 dark:border-gray-700 h-full flex items-center justify-center">
-                      <div className="text-center">
-                        <div
-                          className={`text-3xl mb-2 inline-block transition-all duration-300 group-hover:scale-125 group-hover:rotate-12 bg-gradient-to-r ${skill.color} bg-clip-text text-transparent`}
-                        >
-                          {skill.icon}
-                        </div>
-                        <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
-                          {skill.name}
-                        </h4>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Second marquee row (duplicate) */}
-              <div
-                className={`flex gap-4 ${!isHovering ? "animate-marquee" : ""}`}
-                aria-hidden="true"
-              >
-                {familiarSkills.map((skill, index) => (
-                  <div
-                    key={`second-${index}`}
-                    className="group relative min-w-[140px] h-[120px]"
-                  >
-                    <div className="relative bg-white dark:bg-gray-800 rounded-xl p-4 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer border border-gray-200 dark:border-gray-700 h-full flex items-center justify-center">
-                      <div className="text-center">
-                        <div
-                          className={`text-3xl mb-2 inline-block transition-all duration-300 group-hover:scale-125 group-hover:rotate-12 bg-gradient-to-r ${skill.color} bg-clip-text text-transparent`}
-                        >
-                          {skill.icon}
-                        </div>
-                        <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
-                          {skill.name}
-                        </h4>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+  <div
+    className="relative overflow-hidden py-4"
+    onMouseEnter={() => setIsHovering(true)}
+    onMouseLeave={() => setIsHovering(false)}
+  >
+    {/* Single marquee wrapper */}
+    <div className="flex">
+      <div
+        className={`flex gap-4 ${!isHovering ? "animate-marquee" : ""}`}
+        style={{ whiteSpace: "nowrap" }}
+      >
+        {/* First set */}
+        {familiarSkills.map((skill, index) => (
+          <div
+            key={`first-${index}`}
+            className="group relative min-w-[140px] h-[120px] flex-shrink-0"
+          >
+            <div className="relative bg-white dark:bg-gray-800 rounded-xl p-4 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer border border-gray-200 dark:border-gray-700 h-full flex items-center justify-center">
+              <div className="text-center">
+                <div
+                  className={`text-3xl mb-2 inline-block transition-all duration-300 group-hover:scale-125 group-hover:rotate-12 bg-gradient-to-r ${skill.color} bg-clip-text text-transparent`}
+                >
+                  {skill.icon}
+                </div>
+                <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                  {skill.name}
+                </h4>
               </div>
             </div>
           </div>
+        ))}
+        
+        {/* Duplicate set - exactly the same for seamless loop */}
+        {familiarSkills.map((skill, index) => (
+          <div
+            key={`second-${index}`}
+            className="group relative min-w-[140px] h-[120px] flex-shrink-0"
+          >
+            <div className="relative bg-white dark:bg-gray-800 rounded-xl p-4 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer border border-gray-200 dark:border-gray-700 h-full flex items-center justify-center">
+              <div className="text-center">
+                <div
+                  className={`text-3xl mb-2 inline-block transition-all duration-300 group-hover:scale-125 group-hover:rotate-12 bg-gradient-to-r ${skill.color} bg-clip-text text-transparent`}
+                >
+                  {skill.icon}
+                </div>
+                <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                  {skill.name}
+                </h4>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
         </div>
       </section>
 
@@ -1090,7 +1139,7 @@ export function App() {
         className="w-full slide-in-right  py-20 bg-white dark:bg-gray-900"
       >
         <div className="max-w-[1200px] mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-center -mt-14 mb-4">
             <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-gradient">
               My Projects
             </span>
@@ -1307,7 +1356,7 @@ export function App() {
                           <div className="w-full h-1.5 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
                             <div
                               className="h-full bg-gradient-to-r from-orange-500 to-pink-500 rounded-full transform origin-left transition-all duration-1000 group-hover/card:w-full w-0"
-                              style={{ width: "0%" }}
+                              style={{ width: "70%" }}
                             >
                               <div className="w-full h-full animate-shimmer-light"></div>
                             </div>
@@ -1742,12 +1791,12 @@ export function App() {
         className="w-full py-20 slide-in-right reveal bg-white dark:bg-gray-900 scroll-mt-20 reveal"
       >
         <div className="max-w-[1200px] mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 reveal-left">
-            <span className="bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 bg-clip-text text-transparent animate-gradient">
+          <h2 className="text-3xl md:text-4xl font-bold text-center -mt-14 reveal-left">
+            <span className="bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 bg-clip-text text-transparent animate-gradient -mt-8">
               Get In Touch
             </span>
           </h2>
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-5xl mx-auto mt-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Contact Info Card - Slides from left */}
               <div
@@ -1772,7 +1821,7 @@ export function App() {
                       />
                     </div>
                     <div>
-                      <p className="text-xs text-gray-500">EMAIL</p>
+                      <p className="text-xs text-gray-500 flex flex-start">EMAIL</p>
                       <p className="text-gray-700 dark:text-gray-300">
                         veera53631@gmail.com
                       </p>
@@ -1789,7 +1838,7 @@ export function App() {
                       />
                     </div>
                     <div>
-                      <p className="text-xs text-gray-500">PHONE</p>
+                      <p className="text-xs text-gray-500  flex flex-start">PHONE</p>
                       <p className="text-gray-700 dark:text-gray-300">
                         +91 63748 57553
                       </p>
@@ -1806,7 +1855,7 @@ export function App() {
                       />
                     </div>
                     <div>
-                      <p className="text-xs text-gray-500">LOCATION</p>
+                      <p className="text-xs text-gray-500  flex flex-start">LOCATION</p>
                       <p className="text-gray-700 dark:text-gray-300">
                         Chennai, India
                       </p>
@@ -1861,7 +1910,7 @@ export function App() {
         className="w-full py-20 slide-in-right reveal bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800"
       >
         <div className="max-w-[1200px] mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-center -mt-16 mb-2">
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent animate-gradient">
               Resume
             </span>
