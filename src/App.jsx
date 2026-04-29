@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import resume from "./vijay resume.pdf"
+
 export function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
@@ -553,7 +554,7 @@ export function App() {
           </circle>
         </svg>
         <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <span className="text-xl font-bold bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent animate-pulse">92%</span>
+          <span className="text-xl font-bold bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent ">92%</span>
           <span className="text-[10px] text-green-600 dark:text-green-400 animate-pulse mt-0.5">Expert</span>
         </div>
       </div>
@@ -616,7 +617,7 @@ export function App() {
       
       {/* Center Text - Yellow Gradient */}
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span className="text-xl font-bold bg-gradient-to-r from-yellow-500 to-amber-500 bg-clip-text text-transparent animate-pulse">
+        <span className="text-xl font-bold bg-gradient-to-r from-yellow-500 to-amber-500 bg-clip-text text-transparent ">
           88%
         </span>
         <span className="text-[10px] text-yellow-600 dark:text-yellow-400 mt-0.5">
@@ -683,7 +684,7 @@ export function App() {
       
       {/* Center Text - Blue colors */}
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span className="text-xl font-bold bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent animate-pulse">
+        <span className="text-xl font-bold bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent ">
           90%
         </span>
         <span className="text-[10px] text-blue-600 dark:text-blue-400 mt-0.5">
@@ -700,7 +701,7 @@ export function App() {
               {/* 4. React.js Card - 83% Purple Gradient */}
             <div className="group relative bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
   <div className="flex flex-col items-center text-center">
-    <div className="mb-3 animate-spin-slow">
+    <div className="mb-3 ">
       <span className="text-5xl">
         <img
           width="44"
@@ -751,7 +752,7 @@ export function App() {
       
       {/* Center Text - Blue Gradient */}
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent animate-pulse">
+        <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent ">
           83%
         </span>
         <span className="text-[10px] text-cyan-600 dark:text-cyan-400 mt-0.5">
@@ -884,7 +885,7 @@ export function App() {
       
       {/* Center Text - Green Gradient */}
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span className="text-xl font-bold bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent animate-pulse">
+        <span className="text-xl font-bold bg-gradient-to-r from-green-500 to-emerald-500 bg-clip-text text-transparent ">
           85%
         </span>
         <span className="text-[10px] text-green-600 dark:text-green-400 mt-0.5">
@@ -944,7 +945,7 @@ export function App() {
       
       {/* Center Text - Pink Gradient */}
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span className="text-xl font-bold bg-gradient-to-r from-pink-500 to-rose-500 bg-clip-text text-transparent animate-pulse">
+        <span className="text-xl font-bold bg-gradient-to-r from-pink-500 to-rose-500 bg-clip-text text-transparent ">
           85%
         </span>
         <span className="text-[10px] text-pink-600 dark:text-pink-400 mt-0.5">
@@ -1065,72 +1066,81 @@ export function App() {
             </div>
           </div>
 
-          {/* Familiar With - Same height cards */}
-         <div className="relative mt-16 overflow-hidden">
+  
+ {/* Familiar With - Scrolling Cards */}
+<div className="relative mt-16 overflow-hidden">
   <div className="absolute left-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-r from-blue-50 dark:from-gray-800 to-transparent pointer-events-none"></div>
   <div className="absolute right-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-l from-purple-50 dark:from-gray-800 to-transparent pointer-events-none"></div>
 
   <h3 className="text-2xl font-bold text-center mb-8 text-gray-800 dark:text-white flex items-center justify-center gap-3">
     Also Familiar With
+    <span className="text-3xl animate-bounce-fast">✨</span>
   </h3>
 
-  <div
-    className="relative overflow-hidden py-4"
-    onMouseEnter={() => setIsHovering(true)}
-    onMouseLeave={() => setIsHovering(false)}
-  >
-    {/* Single marquee wrapper */}
-    <div className="flex">
-      <div
-        className={`flex gap-4 ${!isHovering ? "animate-marquee" : ""}`}
-        style={{ whiteSpace: "nowrap" }}
-      >
-        {/* First set */}
-        {familiarSkills.map((skill, index) => (
-          <div
-            key={`first-${index}`}
-            className="group relative min-w-[140px] h-[120px] flex-shrink-0"
-          >
-            <div className="relative bg-white dark:bg-gray-800 rounded-xl p-4 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer border border-gray-200 dark:border-gray-700 h-full flex items-center justify-center">
-              <div className="text-center">
-                <div
-                  className={`text-3xl mb-2 inline-block transition-all duration-300 group-hover:scale-125 group-hover:rotate-12 bg-gradient-to-r ${skill.color} bg-clip-text text-transparent`}
-                >
-                  {skill.icon}
+  <div className="w-full overflow-hidden">
+    <div className="marquee">
+      {/* Create multiple copies for seamless loop */}
+      <div className="marquee__inner">
+        {[...Array(4)].map((_, i) => (
+          <div key={i} className="marquee__group">
+            {familiarSkills.map((skill, idx) => (
+              <button
+                key={`${i}-${idx}`}
+                onClick={() => handleCardClick(skill.name)}
+                className="bg-white dark:bg-gray-800 rounded-xl p-4 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer border border-gray-200 dark:border-gray-700 flex-shrink-0"
+                style={{ width: '140px', height: '120px' }}
+              >
+                <div className="text-center">
+                  <div className="text-3xl mb-2 flex justify-center">{skill.icon}</div>
+                  <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-200">{skill.name}</h4>
                 </div>
-                <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
-                  {skill.name}
-                </h4>
-              </div>
-            </div>
-          </div>
-        ))}
-        
-        {/* Duplicate set - exactly the same for seamless loop */}
-        {familiarSkills.map((skill, index) => (
-          <div
-            key={`second-${index}`}
-            className="group relative min-w-[140px] h-[120px] flex-shrink-0"
-          >
-            <div className="relative bg-white dark:bg-gray-800 rounded-xl p-4 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer border border-gray-200 dark:border-gray-700 h-full flex items-center justify-center">
-              <div className="text-center">
-                <div
-                  className={`text-3xl mb-2 inline-block transition-all duration-300 group-hover:scale-125 group-hover:rotate-12 bg-gradient-to-r ${skill.color} bg-clip-text text-transparent`}
-                >
-                  {skill.icon}
-                </div>
-                <h4 className="text-sm font-semibold text-gray-700 dark:text-gray-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
-                  {skill.name}
-                </h4>
-              </div>
-            </div>
+              </button>
+            ))}
           </div>
         ))}
       </div>
     </div>
   </div>
 </div>
-        </div>
+
+<style jsx>{`
+  .marquee {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+     .marquee__group:not(:last-child) {
+    margin-right: 1rem;
+  }
+
+  .marquee__inner {
+    display: flex;
+    width: fit-content;
+    animation: scroll-left 20s linear infinite;
+  }
+
+  .marquee__group {
+    display: flex;
+    gap: 1rem;
+    flex-shrink: 0;
+  }
+
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Pause on hover */
+  .marquee:hover .marquee__inner {
+    animation-play-state: paused;
+  }
+`}</style>
+        
+        </div>  {/* Closes max-w div */}
       </section>
 
       {/* Projects Section - Full Width */}
@@ -1183,607 +1193,610 @@ export function App() {
       </section>
 
       {/* Experience Section - Full Width */}
-      <section
-        id="experience"
-        className="w-full py-20 relative overflow-hidden bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800"
-      >
-        {/* ========== ENHANCED ANIMATED BACKGROUND ELEMENTS ========== */}
+    <section
+    
+  id="experience"
+  className="w-full py-20 relative overflow-hidden bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800"
+>
+  {/* ========== ENHANCED ANIMATED BACKGROUND ELEMENTS ========== */}
 
-        {/* Animated Gradient Orbs */}
-        <div className="absolute top-0 -left-40 w-96 h-96 bg-orange-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float-slow"></div>
-        <div className="absolute top-0 -right-40 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float-slower animation-delay-2000"></div>
-        <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float-slowest animation-delay-4000"></div>
+  {/* Animated Gradient Orbs */}
+  <div className="absolute top-0 -left-40 w-96 h-96 bg-orange-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float-slow"></div>
+  <div className="absolute top-0 -right-40 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float-slower animation-delay-2000"></div>
+  <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float-slowest animation-delay-4000"></div>
 
-        {/* Floating Particles */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {[...Array(20)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-1 h-1 bg-orange-500 rounded-full opacity-0 animate-float-particle"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`,
-                animationDuration: `${3 + Math.random() * 4}s`,
-                width: `${2 + Math.random() * 4}px`,
-                height: `${2 + Math.random() * 4}px`,
-                background: `radial-gradient(circle, ${
-                  ["#f97316", "#ef4444", "#ec4899", "#3b82f6"][
-                    Math.floor(Math.random() * 4)
-                  ]
-                }, transparent)`,
-              }}
-            />
-          ))}
+  {/* Floating Particles */}
+  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    {[...Array(20)].map((_, i) => (
+      <div
+        key={i}
+        className="absolute w-1 h-1  rounded-full opacity-0 animate-float-particle"
+        style={{
+          left: `${Math.random() * 100}%`,
+          top: `${Math.random() * 100}%`,
+          animationDelay: `${Math.random() * 5}s`,
+          animationDuration: `${3 + Math.random() * 4}s`,
+          width: `${2 + Math.random() * 4}px`,
+          height: `${2 + Math.random() * 4}px`,
+          background: `radial-gradient(circle, ${
+            ["#f97316", "#ef4444", "#ec4899", "#3b82f6"][
+              Math.floor(Math.random() * 4)
+            ]
+          }, transparent)`,
+        }}
+      />
+    ))}
+  </div>
+
+  {/* Rotating Geometric Shapes */}
+  <div className="absolute top-20 right-10 w-32 h-32 border-2 border-orange-500/20 rounded-2xl animate-rotate-slow pointer-events-none"></div>
+  <div className="absolute bottom-20 left-10 w-24 h-24 border-2 border-pink-500/20 rounded-full animate-rotate-reverse pointer-events-none"></div>
+  <div className="absolute top-1/2 left-1/4 w-16 h-16 border border-blue-500/20 rotate-45 animate-spin-slow pointer-events-none"></div>
+
+  {/* Grid Pattern Overlay */}
+  <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
+
+  <div className="max-w-[1200px] mx-auto px-4 relative z-10">
+    {/* ========== ENHANCED TITLE SECTION ========== */}
+    <div className="text-center mb-16">
+      <div className="relative inline-block">
+        {/* Animated Badge */}
+        <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
+          <span className="inline-block px-4 py-1 text-xs font-semibold text-orange-600 dark:text-orange-400 bg-orange-100 dark:bg-orange-900/30 rounded-full animate-pulse-slow">
+            ✨ MY JOURNEY ✨
+          </span>
         </div>
 
-        {/* Rotating Geometric Shapes */}
-        <div className="absolute top-20 right-10 w-32 h-32 border-2 border-orange-500/20 rounded-2xl animate-rotate-slow pointer-events-none"></div>
-        <div className="absolute bottom-20 left-10 w-24 h-24 border-2 border-pink-500/20 rounded-full animate-rotate-reverse pointer-events-none"></div>
-        <div className="absolute top-1/2 left-1/4 w-16 h-16 border border-blue-500/20 rotate-45 animate-spin-slow pointer-events-none"></div>
+        <h2 className="text-3xl md:text-5xl font-bold mt-4">
+          <span className="bg-gradient-to-r from-orange-600 via-blue-600 to-pink-600 bg-clip-text text-transparent animate-gradient bg-[length:200%]">
+            Work Experience & Certifications
+          </span>
+        </h2>
 
-        {/* Grid Pattern Overlay */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
+        {/* Animated Underline with Glow */}
+        <div className="absolute -bottom-3 left-0 w-full">
+          <div className="h-1 bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 rounded-full animate-expand-width"></div>
+          <div className="h-1 bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 rounded-full animate-expand-width-delayed blur-sm opacity-50"></div>
+        </div>
+      </div>
 
-        <div className="max-w-[1200px] mx-auto px-4 relative z-10">
-          {/* ========== ENHANCED TITLE SECTION ========== */}
-          <div className="text-center mb-16">
-            <div className="relative inline-block">
-              {/* Animated Badge */}
-              <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
-                <span className="inline-block px-4 py-1 text-xs font-semibold text-orange-600 dark:text-orange-400 bg-orange-100 dark:bg-orange-900/30 rounded-full animate-pulse-slow">
-                  ✨ MY JOURNEY ✨
-                </span>
-              </div>
+      <p className="text-gray-600 dark:text-gray-400 mt-6 animate-fade-in-up animation-delay-300">
+        My professional journey and learning path
+      </p>
+    </div>
 
-              <h2 className="text-3xl md:text-5xl font-bold mt-4">
-                <span className="bg-gradient-to-r from-orange-600 via-blue-600 to-pink-600 bg-clip-text text-transparent animate-gradient bg-[length:200%]">
-                  Work Experience & Certifications
-                </span>
-              </h2>
+    <div className="max-w-4xl mx-auto">
+      {/* Timeline Container */}
+      <div className="relative">
+        {/* Animated Timeline Line with Glow Effect */}
+        <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-orange-500 via-red-500 to-pink-500 transform md:-translate-x-1/2 animate-timeline-grow"></div>
+        <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-orange-500 via-red-500 to-pink-500 transform md:-translate-x-1/2 blur-md opacity-30 animate-timeline-grow"></div>
 
-              {/* Animated Underline with Glow */}
-              <div className="absolute -bottom-3 left-0 w-full">
-                <div className="h-1 bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 rounded-full animate-expand-width"></div>
-                <div className="h-1 bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 rounded-full animate-expand-width-delayed blur-sm opacity-50"></div>
+        {/* Flowing Light on Timeline */}
+        <div className="absolute left-4 md:left-1/2 top-0 w-0.5 h-12 bg-white transform md:-translate-x-1/2 animate-flow-down blur-sm"></div>
+
+        {experiences.map((exp, index) => (
+          <div
+            key={exp.id}
+            className={`relative mb-16 animate-slide-in-up group ${
+              index % 2 === 0
+                ? "md:pr-[50%] md:text-right"
+                : "md:pl-[50%] md:ml-auto"
+            }`}
+            style={{ animationDelay: `${index * 0.2}s` }}
+          >
+            {/* Enhanced Timeline Dot with Ripple Effect */}
+            <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 -translate-y-1 z-20">
+              <div className="relative">
+                {/* Multiple Ripple Rings */}
+                <div className="absolute -inset-3 bg-orange-500 rounded-full animate-ripple"></div>
+                <div className="absolute -inset-2 bg-orange-500 rounded-full animate-ripple animation-delay-500"></div>
+                <div className="absolute -inset-1 bg-orange-500 rounded-full animate-ripple animation-delay-1000"></div>
+
+                {/* Rotating Ring */}
+                <div className="absolute -inset-4 border-4 rounded-full animate-rotate-slow"></div>
+
+                {/* Inner Dot with Glow */}
+                <div className="w-5 h-5 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full shadow-lg animate-bounce-slow relative z-10">
+                  <div className="absolute inset-0 bg-white rounded-full animate-ping opacity-30"></div>
+                </div>
               </div>
             </div>
 
-            <p className="text-gray-600 dark:text-gray-400 mt-6 animate-fade-in-up animation-delay-300">
-              My professional journey and learning path
-            </p>
-          </div>
+            {/* Content Card with Enhanced Effects */}
+            <div
+              className={`ml-12 md:ml-0 ${
+                index % 2 === 0 ? "md:mr-6" : "md:ml-6"
+              }`}
+            >
+              {/* ✅ HOVER EFFECT: Background turns BLACK on hover */}
+              {/* ✅ DARK MODE: Background changes appropriately */}
+              <div className="group/card relative overflow-hidden dark:bg-gray-900/80 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-700 hover:scale-105 hover:-translate-y-3 border border-gray-200 dark:border-red-300/30 cursor-pointer hover:bg-black ">
+                
+                {/* Animated Gradient Border */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 opacity-0 group-hover/card:opacity-100 transition-opacity duration-700 blur-xl -z-10"></div>
 
-          <div className="max-w-4xl mx-auto">
-            {/* Timeline Container */}
-            <div className="relative">
-              {/* Animated Timeline Line with Glow Effect */}
-              <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-orange-500 via-red-500 to-pink-500 transform md:-translate-x-1/2 animate-timeline-grow"></div>
-              <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-orange-500 via-red-500 to-pink-500 transform md:-translate-x-1/2 blur-md opacity-30 animate-timeline-grow"></div>
+                {/* Shimmer Effect */}
+                <div className="absolute -inset-full top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 group-hover/card:animate-shimmer"></div>
 
-              {/* Flowing Light on Timeline */}
-              <div className="absolute left-4 md:left-1/2 top-0 w-0.5 h-12 bg-white transform md:-translate-x-1/2 animate-flow-down blur-sm"></div>
+                {/* Corner Decorations */}
+                <div className="absolute top-0 left-0 w-16 h-16 bg-gradient-to-br from-orange-500/10 to-transparent rounded-br-3xl opacity-0 group-hover/card:opacity-100 transition-all duration-500"></div>
+                <div className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-pink-500/10 to-transparent rounded-tl-3xl opacity-0 group-hover/card:opacity-100 transition-all duration-500"></div>
 
-              {experiences.map((exp, index) => (
-                <div
-                  key={exp.id}
-                  className={`relative mb-16 animate-slide-in-up group ${
-                    index % 2 === 0
-                      ? "md:pr-[50%] md:text-right"
-                      : "md:pl-[50%] md:ml-auto"
-                  }`}
-                  style={{ animationDelay: `${index * 0.2}s` }}
-                >
-                  {/* Enhanced Timeline Dot with Ripple Effect */}
-                  <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 -translate-y-1 z-20">
-                    <div className="relative">
-                      {/* Multiple Ripple Rings */}
-                      <div className="absolute -inset-3 bg-orange-500 rounded-full animate-ripple"></div>
-                      <div className="absolute -inset-2 bg-orange-500 rounded-full animate-ripple animation-delay-500"></div>
-                      <div className="absolute -inset-1 bg-orange-500 rounded-full animate-ripple animation-delay-1000"></div>
-
-                      {/* Rotating Ring */}
-                      <div className="absolute -inset-4 border-2 border-orange-500/50 rounded-full animate-rotate-slow"></div>
-
-                      {/* Inner Dot with Glow */}
-                      <div className="w-5 h-5 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full shadow-lg animate-bounce-slow relative z-10">
-                        <div className="absolute inset-0 bg-white rounded-full animate-ping opacity-30"></div>
-                      </div>
+                {/* Magnetic Mouse Effect Area */}
+                <div className="relative z-10 transform transition-transform duration-300 group-hover/card:translate-x-1 group-hover/card:-translate-y-1">
+                  {/* Icon with Enhanced Animation */}
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="text-5xl transform transition-all duration-700 group-hover/card:scale-150 group-hover/card:rotate-12 group-hover/card:animate-bounce group-hover/card:drop-shadow-2xl">
+                      {exp.icon}
                     </div>
+                    <h3 className="text-2xl font-bold text-gray-800 dark:text-white group-hover/card:text-white transition-all duration-500">
+                      {exp.title}
+                    </h3>
                   </div>
 
-                  {/* Content Card with Enhanced Effects */}
-                  <div
-                    className={`ml-12 md:ml-0 ${
-                      index % 2 === 0 ? "md:mr-6" : "md:ml-6"
-                    }`}
-                  >
-                    <div className="group/card relative overflow-hidden bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-700 hover:scale-105 hover:-translate-y-3 border border-orange-100 dark:border-orange-900/30 cursor-pointer">
-                      {/* Animated Gradient Border */}
-                      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 opacity-0 group-hover/card:opacity-100 transition-opacity duration-700 blur-xl -z-10"></div>
+                  {/* Enhanced Tags with 3D Hover */}
+                  <div className="flex flex-wrap gap-3 mb-4">
+                    <span className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-white/10 dark:text-gray-200 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-110 hover:shadow-lg hover:-translate-y-1 group-hover/card:bg-white/20 group-hover/card:text-white cursor-default">
+                       {exp.company}
+                    </span>
+                    <span className="inline-flex items-center gap-2 px-4 py-2 bg-green-100 dark:bg-white/10 dark:text-gray-200 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-110 hover:shadow-lg hover:-translate-y-1 group-hover/card:bg-white/20 group-hover/card:text-white cursor-default">
+                      <span className="text-lg">📅</span> {exp.duration}
+                    </span>
+                  </div>
 
-                      {/* Shimmer Effect */}
-                      <div className="absolute -inset-full top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent transform -skew-x-12 group-hover/card:animate-shimmer"></div>
+                  {/* Description with Typing Effect on Hover */}
+                  <div className="relative">
+                    <p className="text-black dark:text-white text-left leading-relaxed relative z-10 transition-all duration-300 group-hover/card:tracking-wide group-hover/card:text-gray-200">
+                      {exp.description}
+                    </p>
 
-                      {/* Corner Decorations */}
-                      <div className="absolute top-0 left-0 w-16 h-16 bg-gradient-to-br from-orange-500/10 to-transparent rounded-br-3xl opacity-0 group-hover/card:opacity-100 transition-all duration-500"></div>
-                      <div className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-pink-500/10 to-transparent rounded-tl-3xl opacity-0 group-hover/card:opacity-100 transition-all duration-500"></div>
+                    {/* Animated Underline */}
+                    {/* <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-pink-500 group-hover/card:w-full transition-all duration-700"></div> */}
 
-                      {/* Magnetic Mouse Effect Area */}
-                      <div className="relative z-10 transform transition-transform duration-300 group-hover/card:translate-x-1 group-hover/card:-translate-y-1">
-                        {/* Icon with Enhanced Animation */}
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className="text-5xl transform transition-all duration-700 group-hover/card:scale-150 group-hover/card:rotate-12 group-hover/card:animate-bounce group-hover/card:drop-shadow-2xl">
-                            {exp.icon}
-                          </div>
-                          <h3 className="text-2xl font-bold text-gray-800 dark:text-white group-hover/card:text-transparent group-hover/card:bg-clip-text group-hover/card:bg-gradient-to-r group-hover/card:from-orange-600 group-hover/card:to-pink-600 transition-all duration-500">
-                            {exp.title}
-                          </h3>
-                        </div>
+                    {/* Highlight Effect on Text */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-pink-500/0 via-orange-500/0 to-pink-500/0 group-hover/card:via-orange-500/10 transition-all duration-700 rounded-lg pointer-events-none"></div>
+                  </div>
 
-                        {/* Enhanced Tags with 3D Hover */}
-                        <div className="flex flex-wrap gap-3 mb-4">
-                          <span className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-110 hover:shadow-lg hover:-translate-y-1 cursor-default">
-                            {/* <span className="text-lg animate-pulse-slow">🏢</span>{" "} */}
-                            {exp.company}
-                          </span>
-                          <span className="inline-flex items-center gap-2 px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-110 hover:shadow-lg hover:-translate-y-1 cursor-default">
-                            <span className="text-lg ">📅</span> {exp.duration}
-                          </span>
-                        </div>
-
-                        {/* Description with Typing Effect on Hover */}
-                        <div className="relative">
-                          <p className="text-gray-600 dark:text-gray-300 text-left leading-relaxed relative z-10 transition-all duration-300 group-hover/card:tracking-wide">
-                            {exp.description}
-                          </p>
-
-                          {/* Animated Underline */}
-                          <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-pink-500 group-hover/card:w-full transition-all duration-700"></div>
-
-                          {/* Highlight Effect on Text */}
-                          <div className="absolute inset-0 bg-gradient-to-r from-orange-500/0 via-orange-500/0 to-pink-500/0 group-hover/card:via-orange-500/5 transition-all duration-700 rounded-lg pointer-events-none"></div>
-                        </div>
-
-                        {/* Progress Bar with Number Counter */}
-                        <div className="mt-4 pt-2">
-                          <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400 mb-1">
-                            <span>Experience level</span>
-                            <span className="font-bold text-orange-600 dark:text-orange-400 animate-counter">
-                              100%
-                            </span>
-                          </div>
-                          <div className="w-full h-1.5 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                            <div
-                              className="h-full bg-gradient-to-r from-orange-500 to-pink-500 rounded-full transform origin-left transition-all duration-1000 group-hover/card:w-full w-0"
-                              style={{ width: "70%" }}
-                            >
-                              <div className="w-full h-full animate-shimmer-light"></div>
-                            </div>
-                          </div>
-                        </div>
+                  {/* Progress Bar with Number Counter */}
+                  <div className="mt-4 pt-2">
+                    <div className="flex justify-between text-xs text-black dark:text-white mb-1 group-hover/card:text-black300">
+                      <span >Experience level</span>
+                      <span className="font-bold text-black dark:text-green-300  animate-counter">
+                        100%
+                      </span>
+                    </div>
+                    <div className="w-full h-1.5 bg-gray-900 dark:bg-gray-700 rounded-full overflow-hidden">
+                      <div
+                        className="h-full bg-gradient-to-r from-green-500 to-pink-500 rounded-full transform origin-left transition-all duration-1000 group-hover/card:w-full w-0"
+                        style={{ width: "70%" }}
+                      >
+                        <div className="w-full h-full animate-shimmer-light"></div>
                       </div>
                     </div>
                   </div>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
-        </div>
+        ))}
+      </div>
+    </div>
+  </div>
 
-        <style jsx>{`
-          /* ========== CORE ANIMATIONS ========== */
-          @keyframes fade-in-up {
-            from {
-              opacity: 0;
-              transform: translateY(30px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
+  <style jsx>{`
+    /* ========== CORE ANIMATIONS ========== */
+    @keyframes fade-in-up {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-          @keyframes slide-in-up {
-            from {
-              opacity: 0;
-              transform: translateY(50px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
+    @keyframes slide-in-up {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-          @keyframes float-particle {
-            0% {
-              transform: translateY(0px) translateX(0px);
-              opacity: 0;
-            }
-            25% {
-              opacity: 0.8;
-            }
-            50% {
-              transform: translateY(-40px) translateX(20px);
-              opacity: 0.4;
-            }
-            75% {
-              opacity: 0.6;
-            }
-            100% {
-              transform: translateY(-80px) translateX(40px);
-              opacity: 0;
-            }
-          }
+    @keyframes float-particle {
+      0% {
+        transform: translateY(0px) translateX(0px);
+        opacity: 0;
+      }
+      25% {
+        opacity: 0.8;
+      }
+      50% {
+        transform: translateY(-40px) translateX(20px);
+        opacity: 0.4;
+      }
+      75% {
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateY(-80px) translateX(40px);
+        opacity: 0;
+      }
+    }
 
-          @keyframes float-slow {
-            0%,
-            100% {
-              transform: translate(0px, 0px) rotate(0deg);
-            }
-            25% {
-              transform: translate(20px, -20px) rotate(5deg);
-            }
-            50% {
-              transform: translate(-10px, 30px) rotate(-3deg);
-            }
-            75% {
-              transform: translate(30px, 10px) rotate(8deg);
-            }
-          }
+    @keyframes float-slow {
+      0%,
+      100% {
+        transform: translate(0px, 0px) rotate(0deg);
+      }
+      25% {
+        transform: translate(20px, -20px) rotate(5deg);
+      }
+      50% {
+        transform: translate(-10px, 30px) rotate(-3deg);
+      }
+      75% {
+        transform: translate(30px, 10px) rotate(8deg);
+      }
+    }
 
-          @keyframes float-slower {
-            0%,
-            100% {
-              transform: translate(0px, 0px) rotate(0deg);
-            }
-            33% {
-              transform: translate(-30px, 20px) rotate(-5deg);
-            }
-            66% {
-              transform: translate(20px, -30px) rotate(5deg);
-            }
-          }
+    @keyframes float-slower {
+      0%,
+      100% {
+        transform: translate(0px, 0px) rotate(0deg);
+      }
+      33% {
+        transform: translate(-30px, 20px) rotate(-5deg);
+      }
+      66% {
+        transform: translate(20px, -30px) rotate(5deg);
+      }
+    }
 
-          @keyframes timeline-grow {
-            from {
-              transform: scaleY(0);
-              transform-origin: top;
-            }
-            to {
-              transform: scaleY(1);
-              transform-origin: top;
-            }
-          }
+    @keyframes timeline-grow {
+      from {
+        transform: scaleY(0);
+        transform-origin: top;
+      }
+      to {
+        transform: scaleY(1);
+        transform-origin: top;
+      }
+    }
 
-          @keyframes expand-width {
-            from {
-              width: 0%;
-              opacity: 0;
-            }
-            to {
-              width: 100%;
-              opacity: 1;
-            }
-          }
+    @keyframes expand-width {
+      from {
+        width: 0%;
+        opacity: 0;
+      }
+      to {
+        width: 100%;
+        opacity: 1;
+      }
+    }
 
-          @keyframes expand-width-delayed {
-            0% {
-              width: 0%;
-              opacity: 0;
-            }
-            50% {
-              width: 0%;
-              opacity: 0;
-            }
-            100% {
-              width: 100%;
-              opacity: 1;
-            }
-          }
+    @keyframes expand-width-delayed {
+      0% {
+        width: 0%;
+        opacity: 0;
+      }
+      50% {
+        width: 0%;
+        opacity: 0;
+      }
+      100% {
+        width: 100%;
+        opacity: 1;
+      }
+    }
 
-          @keyframes shimmer {
-            0% {
-              transform: translateX(-100%) skewX(-12deg);
-            }
-            100% {
-              transform: translateX(100%) skewX(-12deg);
-            }
-          }
+    @keyframes shimmer {
+      0% {
+        transform: translateX(-100%) skewX(-12deg);
+      }
+      100% {
+        transform: translateX(100%) skewX(-12deg);
+      }
+    }
 
-          @keyframes shimmer-light {
-            0% {
-              transform: translateX(-100%);
-            }
-            100% {
-              transform: translateX(100%);
-            }
-          }
+    @keyframes shimmer-light {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    }
 
-          @keyframes bounce-slow {
-            0%,
-            100% {
-              transform: translateY(0);
-            }
-            50% {
-              transform: translateY(-6px);
-            }
-          }
+    @keyframes bounce-slow {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-6px);
+      }
+    }
 
-          @keyframes pulse-slow {
-            0%,
-            100% {
-              opacity: 0.6;
-              transform: scale(1);
-            }
-            50% {
-              opacity: 1;
-              transform: scale(1.05);
-            }
-          }
+    @keyframes pulse-slow {
+      0%,
+      100% {
+        opacity: 0.6;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.05);
+      }
+    }
 
-          @keyframes gradient {
-            0% {
-              background-position: 0% 50%;
-            }
-            50% {
-              background-position: 100% 50%;
-            }
-            100% {
-              background-position: 0% 50%;
-            }
-          }
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
 
-          @keyframes ripple {
-            0% {
-              transform: scale(0.8);
-              opacity: 0.8;
-            }
-            100% {
-              transform: scale(2);
-              opacity: 0;
-            }
-          }
+    @keyframes ripple {
+      0% {
+        transform: scale(0.8);
+        opacity: 0.8;
+      }
+      100% {
+        transform: scale(2);
+        opacity: 0;
+      }
+    }
 
-          @keyframes rotate-slow {
-            from {
-              transform: rotate(0deg);
-            }
-            to {
-              transform: rotate(360deg);
-            }
-          }
+    @keyframes rotate-slow {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
 
-          @keyframes rotate-reverse {
-            from {
-              transform: rotate(360deg);
-            }
-            to {
-              transform: rotate(0deg);
-            }
-          }
+    @keyframes rotate-reverse {
+      from {
+        transform: rotate(360deg);
+      }
+      to {
+        transform: rotate(0deg);
+      }
+    }
 
-          @keyframes spin-slow {
-            from {
-              transform: rotate(0deg);
-            }
-            to {
-              transform: rotate(360deg);
-            }
-          }
+    @keyframes spin-slow {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
 
-          @keyframes flow-down {
-            0% {
-              transform: translateY(0) translateX(-50%);
-              opacity: 1;
-            }
-            100% {
-              transform: translateY(100vh) translateX(-50%);
-              opacity: 0;
-            }
-          }
+    @keyframes flow-down {
+      0% {
+        transform: translateY(0) translateX(-50%);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) translateX(-50%);
+        opacity: 0;
+      }
+    }
 
-          @keyframes counter {
-            from {
-              opacity: 0;
-              transform: translateY(10px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
+    @keyframes counter {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-          /* ========== ANIMATION CLASSES ========== */
-          .animate-fade-in-up {
-            animation: fade-in-up 0.6s ease-out forwards;
-            opacity: 0;
-          }
+    /* ========== ANIMATION CLASSES ========== */
+    .animate-fade-in-up {
+      animation: fade-in-up 0.6s ease-out forwards;
+      opacity: 0;
+    }
 
-          .animate-slide-in-up {
-            animation: slide-in-up 0.6s ease-out forwards;
-            opacity: 0;
-          }
+    .animate-slide-in-up {
+      animation: slide-in-up 0.6s ease-out forwards;
+      opacity: 0;
+    }
 
-          .animate-float-particle {
-            animation: float-particle 4s ease-in-out infinite;
-          }
+    .animate-float-particle {
+      animation: float-particle 4s ease-in-out infinite;
+    }
 
-          .animate-float-slow {
-            animation: float-slow 8s ease-in-out infinite;
-          }
+    .animate-float-slow {
+      animation: float-slow 8s ease-in-out infinite;
+    }
 
-          .animate-float-slower {
-            animation: float-slower 12s ease-in-out infinite;
-          }
+    .animate-float-slower {
+      animation: float-slower 12s ease-in-out infinite;
+    }
 
-          .animate-float-slowest {
-            animation: float-slow 15s ease-in-out infinite;
-          }
+    .animate-float-slowest {
+      animation: float-slow 15s ease-in-out infinite;
+    }
 
-          .animate-timeline-grow {
-            animation: timeline-grow 1s ease-out forwards;
-          }
+    .animate-timeline-grow {
+      animation: timeline-grow 1s ease-out forwards;
+    }
 
-          .animate-expand-width {
-            animation: expand-width 0.8s ease-out forwards;
-          }
+    .animate-expand-width {
+      animation: expand-width 0.8s ease-out forwards;
+    }
 
-          .animate-expand-width-delayed {
-            animation: expand-width-delayed 1.2s ease-out forwards;
-          }
+    .animate-expand-width-delayed {
+      animation: expand-width-delayed 1.2s ease-out forwards;
+    }
 
-          .group-hover\\:animate-shimmer {
-            animation: shimmer 0.8s ease-in-out;
-          }
+    .group-hover\\:animate-shimmer {
+      animation: shimmer 0.8s ease-in-out;
+    }
 
-          .animate-shimmer-light {
-            animation: shimmer-light 1.5s ease-in-out infinite;
-          }
+    .animate-shimmer-light {
+      animation: shimmer-light 1.5s ease-in-out infinite;
+    }
 
-          .animate-bounce-slow {
-            animation: bounce-slow 2s ease-in-out infinite;
-          }
+    .animate-bounce-slow {
+      animation: bounce-slow 2s ease-in-out infinite;
+    }
 
-          .animate-pulse-slow {
-            animation: pulse-slow 2s ease-in-out infinite;
-          }
+    .animate-pulse-slow {
+      animation: pulse-slow 2s ease-in-out infinite;
+    }
 
-          .animate-gradient {
-            background-size: 200%;
-            animation: gradient 3s ease infinite;
-          }
+    .animate-gradient {
+      background-size: 200%;
+      animation: gradient 3s ease infinite;
+    }
 
-          .animate-ripple {
-            animation: ripple 1.5s ease-out infinite;
-          }
+    .animate-ripple {
+      animation: ripple 1.5s ease-out infinite;
+    }
 
-          .animate-rotate-slow {
-            animation: rotate-slow 10s linear infinite;
-          }
+    .animate-rotate-slow {
+      animation: rotate-slow 10s linear infinite;
+    }
 
-          .animate-rotate-reverse {
-            animation: rotate-reverse 8s linear infinite;
-          }
+    .animate-rotate-reverse {
+      animation: rotate-reverse 8s linear infinite;
+    }
 
-          .animate-spin-slow {
-            animation: spin-slow 6s linear infinite;
-          }
+    .animate-spin-slow {
+      animation: spin-slow 6s linear infinite;
+    }
 
-          .animate-flow-down {
-            animation: flow-down 3s linear infinite;
-          }
+    .animate-flow-down {
+      animation: flow-down 3s linear infinite;
+    }
 
-          .animate-counter {
-            animation: counter 0.5s ease-out forwards;
-          }
+    .animate-counter {
+      animation: counter 0.5s ease-out forwards;
+    }
 
-          /* ========== DELAY CLASSES ========== */
-          .animation-delay-200 {
-            animation-delay: 0.2s;
-          }
+    /* ========== DELAY CLASSES ========== */
+    .animation-delay-200 {
+      animation-delay: 0.2s;
+    }
 
-          .animation-delay-300 {
-            animation-delay: 0.3s;
-          }
+    .animation-delay-300 {
+      animation-delay: 0.3s;
+    }
 
-          .animation-delay-500 {
-            animation-delay: 0.5s;
-          }
+    .animation-delay-500 {
+      animation-delay: 0.5s;
+    }
 
-          .animation-delay-1000 {
-            animation-delay: 1s;
-          }
+    .animation-delay-1000 {
+      animation-delay: 1s;
+    }
 
-          .animation-delay-2000 {
-            animation-delay: 2s;
-          }
+    .animation-delay-2000 {
+      animation-delay: 2s;
+    }
 
-          .animation-delay-3000 {
-            animation-delay: 3s;
-          }
+    .animation-delay-3000 {
+      animation-delay: 3s;
+    }
 
-          .animation-delay-4000 {
-            animation-delay: 4s;
-          }
+    .animation-delay-4000 {
+      animation-delay: 4s;
+    }
 
-          /* ========== HOVER ENHANCEMENTS ========== */
-          .group\\/card:hover .group-hover\\/card\\:w-full {
-            width: 100%;
-          }
+    /* ========== HOVER ENHANCEMENTS ========== */
+    .group\\/card:hover .group-hover\\/card\\:w-full {
+      width: 100%;
+    }
 
-          /* Progress bar animation on hover */
-          .group/card:hover .w-0 {
-            width: 100% !important;
-          }
+    /* Progress bar animation on hover */
+    .group/card:hover .w-0 {
+      width: 100% !important;
+    }
 
-          /* Scroll-triggered animation support */
-          @keyframes slide-in-left {
-            from {
-              opacity: 0;
-              transform: translateX(-50px);
-            }
-            to {
-              opacity: 1;
-              transform: translateX(0);
-            }
-          }
+    /* Scroll-triggered animation support */
+    @keyframes slide-in-left {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
 
-          @keyframes slide-in-right {
-            from {
-              opacity: 0;
-              transform: translateX(50px);
-            }
-            to {
-              opacity: 1;
-              transform: translateX(0);
-            }
-          }
+    @keyframes slide-in-right {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
 
-          /* Mouse magnetic effect simulation */
-          .group/card {
-            transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-          }
-        `}</style>
+    /* Mouse magnetic effect simulation */
+    .group/card {
+      transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+  `}</style>
 
-        {/* Intersection Observer Script for Scroll Animations */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-    (function() {
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      };
-      
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-in');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, observerOptions);
-      
-      document.querySelectorAll('.animate-slide-in-up, .animate-fade-in-up').forEach(el => {
-        observer.observe(el);
-      });
-      
-      // Progress bar trigger on hover
-      const cards = document.querySelectorAll('.group\\/card');
-      cards.forEach(card => {
-        const progressBar = card.querySelector('.w-0');
-        card.addEventListener('mouseenter', () => {
-          if (progressBar) {
-            progressBar.style.width = '100%';
-          }
-        });
-      });
-    })();
-  `,
-          }}
-        />
-      </section>
+  {/* Intersection Observer Script for Scroll Animations */}
+  <script
+    dangerouslySetInnerHTML={{
+      __html: `
+(function() {
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+  
+  document.querySelectorAll('.animate-slide-in-up, .animate-fade-in-up').forEach(el => {
+    observer.observe(el);
+  });
+  
+  // Progress bar trigger on hover
+  const cards = document.querySelectorAll('.group\\/card');
+  cards.forEach(card => {
+    const progressBar = card.querySelector('.w-0');
+    card.addEventListener('mouseenter', () => {
+      if (progressBar) {
+        progressBar.style.width = '100%';
+      }
+    });
+  });
+})();
+`,
+    }}
+  />
+</section>
 
       {/* Contact Section - Full Width */}
       <section
@@ -1800,7 +1813,7 @@ export function App() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Contact Info Card - Slides from left */}
               <div
-                className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 shadow-lg reveal-left"
+                className="bg-gray-300 dark:bg-gray-800 rounded-2xl p-6 shadow-lg reveal-left"
                 style={{ transitionDelay: "0.2s" }}
               >
                 <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
@@ -1821,8 +1834,8 @@ export function App() {
                       />
                     </div>
                     <div>
-                      <p className="text-xs text-gray-500 flex flex-start">EMAIL</p>
-                      <p className="text-gray-700 dark:text-gray-300">
+                      <p className="text-xs text-black dark:text-white flex flex-start">EMAIL</p>
+                      <p className="text-gray-900 dark:text-gray-300">
                         veera53631@gmail.com
                       </p>
                     </div>
@@ -1838,8 +1851,8 @@ export function App() {
                       />
                     </div>
                     <div>
-                      <p className="text-xs text-gray-500  flex flex-start">PHONE</p>
-                      <p className="text-gray-700 dark:text-gray-300">
+                      <p className="text-xs text-black dark:text-white flex flex-start">PHONE</p>
+                      <p className="text-gray-900 dark:text-gray-300">
                         +91 63748 57553
                       </p>
                     </div>
@@ -1855,8 +1868,8 @@ export function App() {
                       />
                     </div>
                     <div>
-                      <p className="text-xs text-gray-500  flex flex-start">LOCATION</p>
-                      <p className="text-gray-700 dark:text-gray-300">
+                      <p className="text-xs text-black dark:text-white  flex flex-start">LOCATION</p>
+                      <p className="text-gray-900 dark:text-gray-300">
                         Chennai, India
                       </p>
                     </div>
@@ -1866,7 +1879,7 @@ export function App() {
 
               {/* Contact Form Card - Slides from right */}
               <div
-                className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 shadow-lg reveal-right"
+                className="bg-gray-300 dark:bg-gray-800 rounded-2xl p-6 shadow-lg reveal-right"
                 style={{ transitionDelay: "0.3s" }}
               >
                 <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">

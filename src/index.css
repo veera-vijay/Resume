@@ -197,3 +197,35 @@ code {
   stroke: #F59E0B;
 }
 
+/* Disable clicking on the second marquee set */
+[aria-hidden="true"] * {
+  pointer-events: none !important;
+}
+
+/* Or specifically target duplicate cards */
+.secondary-marquee .group {
+  pointer-events: none !important;
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+  display: flex;
+}
+
+/* Pause animation on hover */
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Smooth hover effect */
+button {
+  transition: all 0.3s ease;
+}
