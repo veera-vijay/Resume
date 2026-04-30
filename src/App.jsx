@@ -56,20 +56,20 @@ export function App() {
     return () => window.removeEventListener("scroll", slideOnScroll);
   }, []);
 
-  const [isMarqueeActive, setIsMarqueeActive] = useState(true);
+  // const [isMarqueeActive, setIsMarqueeActive] = useState(true);
   // DARK MODE - Load saved theme on component mount
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("darkMode");
-    const isDark = savedTheme === "false";
+  // useEffect(() => {
+  //   const savedTheme = localStorage.getItem("darkMode");
+  //   const isDark = savedTheme === "false";
 
-    setDarkMode(isDark);
+  //   setDarkMode(isDark);
 
-    if (isDark) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, []);
+  //   if (isDark) {
+  //     document.documentElement.classList.add("dark");
+  //   } else {
+  //     document.documentElement.classList.remove("dark");
+  //   }
+  // }, []);
 
   // DARK MODE - Apply theme when darkMode changes
   useEffect(() => {
@@ -250,14 +250,14 @@ export function App() {
                       : "text-gray-700 dark:text-gray-300"
                   }`}
                 >
-                  <span className="relative inline-block">
+                  {/* <span className="relative inline-block"> */}
                     {item}
                     <span
                       className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 dark:bg-green-400 transition-all duration-300 ease-out group-hover:w-full ${
                         activeSection === item.toLowerCase() ? "w-full" : ""
                       }`}
                     ></span>
-                  </span>
+                  {/* </span> */}
                 </button>
               ))}
 
@@ -380,43 +380,45 @@ export function App() {
             first opportunity as a MERN Stack Developer.
           </p>
 
-          <div className="flex gap-3 sm:gap-4 justify-center flex-wrap px-2">
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="relative group overflow-hidden bg-gradient-to-r from-green-600 to-blue-600 text-white px-5 sm:px-6 md:px-8 py-2 sm:py-3 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:shadow-xl"
-            >
-              <span className="relative  z-10 flex items-center gap-2">
-                Hire Me{"   "}
-                <span className="text-lg group-hover:translate-x-1 transition-transform duration-300">
-                  →
-                </span>
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-            </button>
-            <button className="relative group overflow-hidden border-2 border-green-600 text-green-600 dark:text-green-400 px-5 sm:px-6 md:px-8 py-2 sm:py-3 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 hover:bg-gradient-to-r hover:from-green-600 hover:to-blue-600 hover:text-white hover:border-transparent hover:scale-105 hover:shadow-xl">
-              <span className="relative z-10 flex items-center gap-2 ">
-                <a href={resume} download="veeravijay-resume">
-                  Download CV
-                </a>
-                <span className="text-lg group-hover:translate-y-1 transition-transform duration-300">
-                  📄
-                </span>
-              </span>
-            </button>
-          </div>
+         <div className="flex gap-3 sm:gap-4 justify-center flex-wrap px-2">
+  {/* Hire Me Button */}
+  <button
+    onClick={() => scrollToSection("contact")}
+    className="relative group overflow-hidden bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:shadow-xl w-36 sm:w-40 md:w-44 py-2.5 sm:py-3"
+  >
+    <span className="relative z-10 flex items-center justify-center gap-2">
+      Hire Me
+      <span className="text-lg group-hover:translate-x-1 transition-transform duration-300">
+        →
+      </span>
+    </span>
+    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+  </button>
 
+  {/* Download CV Button */}
+  <button className="relative group overflow-hidden border-2 border-green-600 text-green-600 dark:text-green-400 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 hover:bg-gradient-to-r hover:from-green-600 hover:to-blue-600 hover:text-white hover:border-transparent hover:scale-105 hover:shadow-xl w-36 sm:w-40 md:w-44 py-2.5 sm:py-3">
+    <span className="relative z-10 flex items-center justify-center gap-2">
+      <a href={resume} download="veeravijay-resume">
+        Download CV
+      </a>
+      <span className="text-lg group-hover:translate-y-1 transition-transform duration-300">
+        📄
+      </span>
+    </span>
+  </button>
+</div>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mt-8 sm:mt-12 px-4 mb-4">
             <div className="group relative">
               <a
                 href="mailto:veera53631@gmail.com"
-                className="relative hover:bg-gradient-to-r from-green-600 via-blue-600 to-purple-800 flex items-center gap-2 text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-sm sm:text-base transition-all duration-300 hover:scale-105 "
+                className="relative hover:bg-gradient-to-r from-green-600 via-blue-600 to-purple-800 flex items-center gap-2 text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-sm sm:text-base transition-all duration-300 hover:scale-105 bg-gray-600 text-white "
               >
                 <img
                   width="18"
                   height="18"
                   src="https://img.icons8.com/ios-filled/50/filled-message.png"
                   alt="email"
-                  className=" dark:brightness-0  dark:invert w-4 h-4 sm:w-5 sm:h-5"
+                  className=" brightness-0 invert dark:brightness-0  dark:invert w-4 h-4 sm:w-5 sm:h-5"
                 />
                 <span>veera53631@gmail.com</span>
               </a>
@@ -427,14 +429,14 @@ export function App() {
                 href="https://github.com/veera-vijay"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="relative  hover:bg-gradient-to-r from-green-600 via-blue-600 to-purple-800 flex items-center gap-2 text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-sm sm:text-base transition-all duration-300 hover:scale-105"
+                className="relative  hover:bg-gradient-to-r from-green-600 via-blue-600 to-purple-800 flex items-center gap-2 text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-sm sm:text-base transition-all duration-300 hover:scale-105 bg-gray-600 text-white "
               >
                 <img
                   width="28"
                   height="28"
                   src="https://img.icons8.com/sf-black-filled/64/github.png"
                   alt="github"
-                  className=" dark:brightness-0  dark:invert w-4 h-4 sm:w-5 sm:h-5"
+                  className="  brightness-0 invert dark:brightness-0  dark:invert w-4 h-4 sm:w-5 sm:h-5"
                 />
                 <span>github.com/veera-vijay</span>
               </a>
@@ -455,8 +457,8 @@ export function App() {
             </span>
           </h2>
 
-          <div className="max-w-4xl mx-auto bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 sm:p-8 shadow-lg">
-            <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+          <div className="max-w-4xl mx-auto bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 sm:p-8 shadow-lg ">
+            <p className="text-base sm:text-left text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
               I'm a{" "}
               <span className="font-bold text-gray-800 dark:text-white">
                 recent graduate
