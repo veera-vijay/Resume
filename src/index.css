@@ -181,31 +181,8 @@ code {
   animation-play-state: paused !important;
 }
 
-/* Progress Circle Colors */
-.progress-circle[data-percentage="90"] circle:last-child,
-.progress-circle[data-percentage="92"] circle:last-child {
-  stroke: #10B981;
-}
 
-.progress-circle[data-percentage="88"] circle:last-child,
-.progress-circle[data-percentage="85"] circle:last-child,
-.progress-circle[data-percentage="82"] circle:last-child {
-  stroke: #3B82F6;
-}
 
-.progress-circle[data-percentage="80"] circle:last-child {
-  stroke: #F59E0B;
-}
-
-/* Disable clicking on the second marquee set */
-[aria-hidden="true"] * {
-  pointer-events: none !important;
-}
-
-/* Or specifically target duplicate cards */
-.secondary-marquee .group {
-  pointer-events: none !important;
-}
 @keyframes marquee {
   0% {
     transform: translateX(0);
@@ -223,9 +200,4 @@ code {
 /* Pause animation on hover */
 .animate-marquee:hover {
   animation-play-state: paused;
-}
-
-/* Smooth hover effect */
-button {
-  transition: all 0.3s ease;
 }

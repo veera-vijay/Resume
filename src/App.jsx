@@ -34,42 +34,9 @@ export function App() {
 
     return () => window.removeEventListener("scroll", revealOnScroll);
   }, []);
-  // Scroll Animation - Right to Left
-  useEffect(() => {
-    const slideElements = document.querySelectorAll(".slide-in-right");
 
-    const slideOnScroll = () => {
-      slideElements.forEach((element) => {
-        const windowHeight = window.innerHeight;
-        const elementTop = element.getBoundingClientRect().top;
-        const revealPoint = 150;
-
-        if (elementTop < windowHeight - revealPoint) {
-          element.classList.add("active");
-        }
-      });
-    };
-
-    window.addEventListener("scroll", slideOnScroll);
-    slideOnScroll(); // Trigger once on load
-
-    return () => window.removeEventListener("scroll", slideOnScroll);
-  }, []);
-
-  // const [isMarqueeActive, setIsMarqueeActive] = useState(true);
-  // DARK MODE - Load saved theme on component mount
-  // useEffect(() => {
-  //   const savedTheme = localStorage.getItem("darkMode");
-  //   const isDark = savedTheme === "false";
-
-  //   setDarkMode(isDark);
-
-  //   if (isDark) {
-  //     document.documentElement.classList.add("dark");
-  //   } else {
-  //     document.documentElement.classList.remove("dark");
-  //   }
-  // }, []);
+ 
+ 
 
   // DARK MODE - Apply theme when darkMode changes
   useEffect(() => {
@@ -82,7 +49,7 @@ export function App() {
     }
   }, [darkMode]);
 
-  // Scroll Spy Logic
+  // Scroll Spy Logic navbar
   useEffect(() => {
     const sections = document.querySelectorAll("section[id]");
     const observer = new IntersectionObserver(
@@ -93,6 +60,7 @@ export function App() {
           }
         });
       },
+      // 30% 
       { threshold: 0.3 },
     );
     sections.forEach((section) => observer.observe(section));
@@ -134,7 +102,7 @@ export function App() {
   // Experience Data
   const experiences = [
     {
-      id: 1,
+      id: 2,
       title: "MERN Stack Developer",
       company: "Silicon craft  Pvt Ltd",
       duration: "6 Months",
@@ -143,7 +111,7 @@ export function App() {
      
     },
     {
-      id: 2,
+      id: 3,
       title: "Automation Testing Course",
       company: "Qspider ",
       duration: "6 Months ",
@@ -214,7 +182,7 @@ export function App() {
   };
 
   return (
-    <div className="bg-white dark:bg-gray-900   overflow-x-hidden text-gray-800 dark:text-gray-100 transition-colors duration-300 ">
+    <div className="bg-white dark:bg-gray-900 overflow-x-hidden text-gray-800 dark:text-gray-100 transition-colors duration-300 ">
       <nav className="fixed top-0 left-0 right-0 bg-white dark:bg-gray-900 transition-colors duration-300 z-50 shadow-md">
         <div className="max-w-[1200px] mx-auto px-4 py-3">
           <div className="flex justify-between items-center">
@@ -251,12 +219,12 @@ export function App() {
                   }`}
                 >
                   {/* <span className="relative inline-block"> */}
-                    {item}
-                    <span
-                      className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 dark:bg-green-400 transition-all duration-300 ease-out group-hover:w-full ${
-                        activeSection === item.toLowerCase() ? "w-full" : ""
-                      }`}
-                    ></span>
+                  {item}
+                  <span
+                    className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 dark:bg-green-400 transition-all duration-300 ease-out group-hover:w-full ${
+                      activeSection === item.toLowerCase() ? "w-full" : ""
+                    }`}
+                  ></span>
                   {/* </span> */}
                 </button>
               ))}
@@ -360,7 +328,7 @@ export function App() {
       {/* hero sectioṇ */}
       <section
         id="home"
-        className="slide-in-right reveal flex items-center justify-center pt-16 relative overflow-hidden "
+        className=" reveal flex items-center justify-center pt-16 relative overflow-hidden "
       >
         <div className="px-4 text-center w-full">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-6 font-bold mb-4">
@@ -380,33 +348,33 @@ export function App() {
             first opportunity as a MERN Stack Developer.
           </p>
 
-         <div className="flex gap-3 sm:gap-4 justify-center flex-wrap px-2">
-  {/* Hire Me Button */}
-  <button
-    onClick={() => scrollToSection("contact")}
-    className="relative group overflow-hidden bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:shadow-xl w-36 sm:w-40 md:w-44 py-2.5 sm:py-3"
-  >
-    <span className="relative z-10 flex items-center justify-center gap-2">
-      Hire Me
-      <span className="text-lg group-hover:translate-x-1 transition-transform duration-300">
-        →
-      </span>
-    </span>
-    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-  </button>
+          <div className="flex gap-3 sm:gap-4 justify-center flex-wrap px-2">
+            {/* Hire Me Button */}
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="relative group overflow-hidden bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-105 hover:shadow-xl w-36 sm:w-40 md:w-44 py-2.5 sm:py-3"
+            >
+              <span className="relative z-10 flex items-center justify-center gap-2">
+                Hire Me
+                <span className="text-lg group-hover:translate-x-1 transition-transform duration-300">
+                  →
+                </span>
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+            </button>
 
-  {/* Download CV Button */}
-  <button className="relative group overflow-hidden border-2 border-green-600 text-green-600 dark:text-green-400 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 hover:bg-gradient-to-r hover:from-green-600 hover:to-blue-600 hover:text-white hover:border-transparent hover:scale-105 hover:shadow-xl w-36 sm:w-40 md:w-44 py-2.5 sm:py-3">
-    <span className="relative z-10 flex items-center justify-center gap-2">
-      <a href={resume} download="veeravijay-resume">
-        Download CV
-      </a>
-      <span className="text-lg group-hover:translate-y-1 transition-transform duration-300">
-        📄
-      </span>
-    </span>
-  </button>
-</div>
+            {/* Download CV Button */}
+            <button className="relative group overflow-hidden border-2 border-green-600 text-green-600 dark:text-green-400 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 hover:bg-gradient-to-r hover:from-green-600 hover:to-blue-600 hover:text-white hover:border-transparent hover:scale-105 hover:shadow-xl w-36 sm:w-40 md:w-44 py-2.5 sm:py-3">
+              <span className="relative z-10 flex items-center justify-center gap-2">
+                <a href={resume} download="veeravijay-resume">
+                  Download CV
+                </a>
+                <span className="text-lg group-hover:translate-y-1 transition-transform duration-300">
+                  📄
+                </span>
+              </span>
+            </button>
+          </div>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mt-8 sm:mt-12 px-4 mb-4">
             <div className="group relative">
               <a
@@ -509,7 +477,7 @@ export function App() {
       {/* Skills Section - Full Width */}
       <section
         id="skills"
-        className="slide-in-right py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 relative overflow-hidden"
+        className="reveal py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 relative overflow-hidden"
       >
         <div className="max-w-[1200px] mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center -mt-16 mb-4">
@@ -1663,7 +1631,7 @@ export function App() {
       {/* Projects Section - Full Width */}
       <section
         id="projects"
-        className="w-full slide-in-right  py-20 bg-white dark:bg-gray-900"
+        className="w-full reveal  py-20 bg-white dark:bg-gray-900"
       >
         <div className="max-w-[1200px] mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center -mt-14 mb-4">
@@ -1716,18 +1684,6 @@ export function App() {
       >
         {/* ========== ENHANCED ANIMATED BACKGROUND ELEMENTS ========== */}
 
-        {/* Animated Gradient Orbs */}
-        <div className="absolute top-0 -left-40 w-96 h-96 bg-orange-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float-slow"></div>
-        <div className="absolute top-0 -right-40 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float-slower animation-delay-2000"></div>
-        <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float-slowest animation-delay-4000"></div>
-
-        {/* Floating Particles */}
-       
-        {/* Rotating Geometric Shapes */}
-        <div className="absolute top-20 right-10 w-32 h-32 border-2 border-orange-500/20 rounded-2xl animate-rotate-slow pointer-events-none"></div>
-        <div className="absolute bottom-20 left-10 w-24 h-24 border-2 border-pink-500/20 rounded-full animate-rotate-reverse pointer-events-none"></div>
-        <div className="absolute top-1/2 left-1/4 w-16 h-16 border border-blue-500/20 rotate-45 animate-spin-slow pointer-events-none"></div>
-
         {/* Grid Pattern Overlay */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
 
@@ -1767,14 +1723,11 @@ export function App() {
               <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-orange-500 via-red-500 to-pink-500 transform md:-translate-x-1/2 animate-timeline-grow"></div>
               <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-orange-500 via-red-500 to-pink-500 transform md:-translate-x-1/2 blur-md opacity-30 animate-timeline-grow"></div>
 
-              {/* Flowing Light on Timeline */}
-              <div className="absolute left-4 md:left-1/2 top-0 w-0.5 h-12 bg-white transform md:-translate-x-1/2 animate-flow-down blur-sm"></div>
-
               {experiences.map((exp, index) => (
                 <div
                   key={exp.id}
                   className={`relative mb-16 animate-slide-in-up group ${
-                    index % 2 === 0
+                    exp.id % 2 === 0
                       ? "md:pr-[50%] md:text-right"
                       : "md:pl-[50%] md:ml-auto"
                   }`}
@@ -1783,14 +1736,6 @@ export function App() {
                   {/* Enhanced Timeline Dot with Ripple Effect */}
                   <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 -translate-y-1 z-20">
                     <div className="relative">
-                      {/* Multiple Ripple Rings */}
-                      <div className="absolute -inset-3 bg-orange-500 rounded-full animate-ripple"></div>
-                      <div className="absolute -inset-2 bg-orange-500 rounded-full animate-ripple animation-delay-500"></div>
-                      <div className="absolute -inset-1 bg-orange-500 rounded-full animate-ripple animation-delay-1000"></div>
-
-                      {/* Rotating Ring */}
-                      <div className="absolute -inset-4 border-4 rounded-full animate-rotate-slow"></div>
-
                       {/* Inner Dot with Glow */}
                       <div className="w-5 h-5 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full shadow-lg animate-bounce-slow relative z-10">
                         <div className="absolute inset-0 bg-white rounded-full animate-ping opacity-30"></div>
@@ -1798,71 +1743,59 @@ export function App() {
                     </div>
                   </div>
 
-                  {/* Content Card with Enhanced Effects */}
+                  {/* Content Card with Enhanced Effects   padding within the cards */}
                   <div
                     className={`ml-12 md:ml-0 ${
-                      index % 2 === 0 ? "md:mr-6" : "md:ml-6"
+                      index % 2 === 0 ? "md:mr-12" : "md:ml-12"
                     }`}
                   >
-                    {/* ✅ HOVER EFFECT: Background turns BLACK on hover */}
-                    {/* ✅ DARK MODE: Background changes appropriately */}
-                    <div className="group/card relative overflow-hidden dark:bg-gray-900/80 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-700 hover:scale-105 hover:-translate-y-3 border border-gray-200 dark:border-red-300/30 cursor-pointer hover:bg-black ">
-                      {/* Animated Gradient Border */}
-                      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 opacity-0 group-hover/card:opacity-100 transition-opacity duration-700 blur-xl -z-10"></div>
-
-                      {/* Shimmer Effect */}
-                      <div className="absolute -inset-full top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 group-hover/card:animate-shimmer"></div>
-
-                      {/* Corner Decorations */}
-                      <div className="absolute top-0 left-0 w-16 h-16 bg-gradient-to-br from-orange-500/10 to-transparent rounded-br-3xl opacity-0 group-hover/card:opacity-100 transition-all duration-500"></div>
-                      <div className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-pink-500/10 to-transparent rounded-tl-3xl opacity-0 group-hover/card:opacity-100 transition-all duration-500"></div>
-
+                    {/*  HOVER EFFECT: Background turns BLACK on hover */}
+                    {/*  DARK MODE: Background changes appropriately */}
+                    <div className="group/card relative overflow-hidden dark:bg-gray-900 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-700 hover:scale-105 hover:-translate-y-3 border border-gray-200 dark:border-red-300/30 cursor-pointer hover:bg-pink-300 bg-gray-300 ">
                       {/* Magnetic Mouse Effect Area */}
-                      <div className="relative z-10 transform transition-transform duration-300 group-hover/card:translate-x-1 group-hover/card:-translate-y-1">
+                      <div className="relative z-10 transform transition-transform duration-300 group-hover/card:translate-x-1 group-hover/card:-translate-y-1 ">
                         {/* Icon with Enhanced Animation */}
                         <div className="flex items-center gap-3 mb-4">
                           <div className="text-5xl transform transition-all duration-700 group-hover/card:scale-150 group-hover/card:rotate-12 group-hover/card:animate-bounce group-hover/card:drop-shadow-2xl">
                             {exp.icon}
                           </div>
-                          <h3 className="text-2xl font-bold text-gray-800 dark:text-white group-hover/card:text-white transition-all duration-500">
+                          <h3 className="text-2xl font-bold text-gray-800 dark:text-white md:text-left  md:text-xl md:tracking-tighter  transition-all duration-500">
                             {exp.title}
                           </h3>
                         </div>
 
                         {/* Enhanced Tags with 3D Hover */}
                         <div className="flex flex-wrap gap-3 mb-4">
-                          <span className="inline-flex items-center gap-2 px-4 py-2 bg-blue-300 dark:bg-white/10 dark:text-gray-200 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-110 hover:shadow-lg hover:-translate-y-1 group-hover/card:bg-white/20 group-hover/card:text-white cursor-default">
+                          <span className="inline-flex items-center gap-2 px-4 py-2 bg-blue-300   dark:bg-white/10 dark:text-gray-200 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-110 hover:shadow-lg hover:-translate-y-1 group-hover/card:bg-white cursor-default  dark:group-hover/card:bg-gray-800/50 ">
                             {exp.company}
                           </span>
-                          <span className="inline-flex items-center gap-2 px-4 py-2 bg-green-300 dark:bg-white/10 dark:text-gray-200 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-110 hover:shadow-lg hover:-translate-y-1 group-hover/card:bg-white/20 group-hover/card:text-white cursor-default">
+                          <span className="inline-flex items-center gap-2 px-4 py-2 bg-green-300 dark:bg-white/10 dark:text-gray-200 rounded-full text-sm font-semibold transition-all duration-300 hover:scale-110 hover:shadow-lg hover:-translate-y-1 group-hover/card:bg-white dark:group-hover/card:bg-gray-800/50  cursor-default">
                             <span className="text-lg">📅</span> {exp.duration}
                           </span>
                         </div>
 
                         {/* Description with Typing Effect on Hover */}
                         <div className="relative">
-                          <p className="text-black dark:text-white text-left leading-relaxed relative z-10 transition-all duration-300 group-hover/card:tracking-wide group-hover/card:text-gray-200">
+                          <p className="text-black dark:text-white text-left leading-relaxed relative z-10 transition-all duration-300  ">
                             {exp.description}
                           </p>
 
-                          {/* Animated Underline */}
-                          {/* <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-pink-500 group-hover/card:w-full transition-all duration-700"></div> */}
-
+                          
                           {/* Highlight Effect on Text */}
                           <div className="absolute inset-0 bg-gradient-to-r from-pink-500/0 via-orange-500/0 to-pink-500/0 group-hover/card:via-orange-500/10 transition-all duration-700 rounded-lg pointer-events-none"></div>
                         </div>
 
                         {/* Progress Bar with Number Counter */}
                         <div className="mt-4 pt-2">
-                          <div className="flex justify-between text-xs text-black dark:text-white mb-1 group-hover/card:text-black300">
+                          <div className="flex justify-between text-xs text-black dark:text-white mb-1 group-hover/card:text-black300 hover:text-white">
                             <span>Experience level</span>
-                            <span className="font-bold text-black dark:text-green-300  animate-counter">
+                            <span className="font-bold text-black dark:text-green-300  hover:text-white animate-counter">
                               100%
                             </span>
                           </div>
                           <div className="w-full h-1.5 bg-gray-900 dark:bg-gray-700 rounded-full overflow-hidden">
                             <div
-                              className="h-full bg-gradient-to-r from-green-500 to-pink-500 rounded-full transform origin-left transition-all duration-1000 group-hover/card:w-full w-0"
+                              className="h-full bg-gradient-to-r from-blue-300 to-blue-500 rounded-full transform origin-left transition-all duration-1000 group-hover/card:w-full w-0"
                               style={{ width: "70%" }}
                             >
                               <div className="w-full h-full animate-shimmer-light"></div>
@@ -2438,12 +2371,12 @@ export function App() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              {/* View Online Button - FIXED */}
+              {/* View Online Button */}
               <a
                 href={resume}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-blue-600 text-blue-600 dark:text-blue-400 rounded-full font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300 hover:scale-105"
+                className="inline-flex items-center justify-center gap-2 border-2 border-blue-600 text-blue-600 dark:text-blue-400 rounded-full font-semibold hover:bg-blue-600 hover:text-white transition-all duration-300 hover:scale-105 w-48 sm:w-52 md:w-56 lg:w-60 py-1"
               >
                 <svg
                   className="w-5 h-5"
@@ -2471,7 +2404,7 @@ export function App() {
               <a
                 href={resume}
                 download="Veeravijay_Resume.pdf"
-                className="inline-flex items-center justify-center  gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 w-48 sm:w-52 md:w-56 lg:w-60 py-3"
               >
                 <svg
                   className="w-5 h-5"
