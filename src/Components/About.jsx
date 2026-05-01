@@ -9,12 +9,12 @@ export const About = () => {
       >
         <div className="  max-w-[1200px] mx-auto px-4">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12">
-            <span className="bg-gradient-to-r from-gray-800 via-gray-600 to-gray-800 dark:from-white dark:via-gray-300 dark:to-white bg-clip-text text-transparent animate-gradient">
+            <span className="  font-poppins bg-gradient-to-r from-gray-800 via-gray-600 to-gray-800 dark:from-white dark:via-gray-300 dark:to-white bg-clip-text text-transparent animate-gradient">
               About Me
             </span>
           </h2>
 
-          <div className="max-w-4xl mx-auto bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 sm:p-8 shadow-lg ">
+          <div className="max-w-4xl mx-auto bg-gray-300 dark:bg-gray-800 rounded-2xl p-6 sm:p-8 shadow-lg ">
             <p className="text-base sm:text-left text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
               I'm a{" "}
               <span className="font-bold text-gray-800 dark:text-white">

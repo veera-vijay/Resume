@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
-import resume from "./vijay resume.pdf"
-import About from "./Components/About"
-import Skills from "./Components/Skills"
-import Projects from "./Components/Projects"
+import resume from "./vijay resume.pdf";
+import About from "./Components/About";
+import Skills from "./Components/Skills";
+import Projects from "./Components/Projects";
 import { Experience } from "./Components/Experience";
 import Contact from "./Components/Contact";
 import Resume from "./Resume";
 import Footer from "./Components/Footer";
+
 
 export function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -311,40 +312,14 @@ export function App() {
         </div>
       </section>
 
-      {/* About Section - Full Width */}
-   
       <About></About>
-
-      {/* Skills Section - Full Width */}
-
       <Skills></Skills>
-
-      {/* Projects Section - Full Width */}
-    <Projects></Projects>
-
-      {/* Experience Section - Full Width */}
-     <Experience></Experience>
-
-
-
-      {/* Contact Section - Full Width */}
-
-     <Contact></Contact>
-
-
-
-
-
-      {/* Resume Section - Full Width */}
-
+      <Projects></Projects>
+      <Experience></Experience>
+      <Contact></Contact>
       <Resume></Resume>
-
-      {/* Footer - Full Width */}
-
       <Footer> </Footer>
 
-
-     
       <style jsx>{`
         @keyframes fade-in-up {
           from {
